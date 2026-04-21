@@ -1,63 +1,46 @@
-# Astro Starter Kit: Blog
+# thomascolin.com
+
+Personal website of Thomas R. Colin — software developer, robotics researcher, mountaineer.
+
+Built with [Astro](https://astro.build). Deployed at [thomascolin.com](https://thomascolin.com).
+
+## Structure
+
+```
+src/
+  content/
+    adventures/   # Adventure trip reports (Markdown)
+    projects/     # Project pages (Markdown)
+  pages/          # Site pages (Astro)
+  layouts/        # Page and adventure layouts
+  components/     # Shared components (Header, Footer, Gallery, …)
+  styles/         # Global CSS and themes
+public/
+  adventures/     # Converted gallery images (WebP, do not edit manually)
+scripts/
+  convert-images.mjs  # Image pipeline for gallery photos
+raw_photos/       # Gitignored — original photos before conversion
+```
+
+## Development
 
 ```sh
-npm create astro@latest -- --template blog
+npm install
+npm run dev       # Local dev server at localhost:4321
+npm run build     # Build to ./dist/
+npm run preview   # Preview production build locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Adding an adventure gallery
 
-Features:
+1. Drop originals into `raw_photos/<folder>/`
+2. Run the conversion script:
+   ```sh
+   node scripts/convert-images.mjs <folder> <adventure-slug>
+   ```
+3. Add the output `gallery:` list to the adventure's frontmatter.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## Content collections
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- **Adventures** — `src/content/adventures/*.md` — fields: `title`, `date`, `location`, `heroImage`, `summary`, `tags`, `gallery`
+- **Projects** — `src/content/projects/*.md` — fields: `title`, `summary`, `tags`, `status`, `order`, `heroImage`
