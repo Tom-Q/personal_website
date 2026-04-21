@@ -2,8 +2,8 @@
 title: "Patagonia 2024"
 date: 2024-01-15
 location: "Patagonia, Chile"
-heroImage: "../../assets/20240113_112220.jpg"
-summary: "A winter expedition into the heart of Patagonia — remote valleys, fierce winds, and some of the most dramatic landscapes on earth."
+heroImage: "../../assets/patagonia2024_tent.JPG"
+summary: "My first expedition: 5 days out in a remote valley."
 tags: ["mountaineering", "expedition", "patagonia"]
 gallery:
   - condor
@@ -18,18 +18,30 @@ gallery:
   - tent
 ---
 
-*Placeholder — story coming soon.*
+This was my first expedition. I spent nearly a year preparing obsessively for it whenever I had any free time. I was still not ready — but I didn't know that yet when I landed in Coyhaique with a hundred-liters backpack full of gear, including a week of food and a packraft.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## From the carretera austral to the wilderness
 
-## Getting there
+I rented a bike and cycled to the trailhead over three days, passing by a couple of villages on the "carretera austral". It was eventful — my luggage rack broke twice under the weight of the gear on the bumpy dirt roads.
 
-Placeholder text for the approach narrative.
+Eventually I left the carretera austral dirt road, to enter an even worse 4x4 track, and the traffic stopped. Then it became a single-track. The next day, it was no longer possible to get the bike through. I left it by the path in the forest and loaded the gear and food on my back.
 
-## On the mountain
+Another day later, I arrived at a large glacial lake, which I crossed by packraft. Beyond the lake there was no path: I had finally reached a completely isolated valley.
 
-Placeholder text for the climbing narrative.
+## Patagonian jungle
 
-## Coming home
+I walked up the river, using the raft to switch banks and avoid bushwhacking — Patagonian shrubs are tough and spiky. I encountered a rare huemul deer, a magical moment. I also encountered dozens of much less magical horseflies who harassed me relentlessly, biting me so much I struggled to fall asleep from the itching.
 
-Placeholder text for the return narrative.
+I entered the forest hoping to circle the mountain at the center of the valley and scale it from its easiest side. Progression was slow and brutal. I had imagined sparse undergrowth; instead I was constantly fighting thorns, low branches, rotten trunks, and swamps wherever the terrain flattened out. The horseflies did not abate.
+
+In the night, listening to serac falls in the dark of my tent, my anxiety peaked. But no matter how I looked at it, I kept coming to the same conclusion: I was right to be scared. If I so much as twisted an ankle, I'd have to crawl my way back to the glacial lake. The forest was so dense, my pack so heavy — even after caching the raft and some food — that I was already tripping constantly while uninjured.
+
+I turned around.
+
+## Downriver
+
+I returned the same way, except I could raft most of it, and had the wind behind me. As I crossed the glacial lake and left the valley, three Andean condors were circling overhead.
+
+## Epilogue
+
+I had another two weeks in Patagonia after this. I summitted a local peak with a guide, and encountered a puma and a condor while hiking in Patagonia National Park. The expedition hadn't met its most ambitious goal — but I was healthy, happy, and already thinking about what I'd do differently next time.
