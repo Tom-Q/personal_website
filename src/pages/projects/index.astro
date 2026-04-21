@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => a.data.order - b.data.order
+);
+
+const statusLabel: Record<string, string> = {
+	active: 'Active',
+	complete: 'Complete',
+	academic: 'Academic',
+};
+---
+
+<PageLayout title="Projects — Thomas R. Colin" description="Software, AI, and robotics research projects by Thomas R. Colin." bodyClass="theme-projects">
+	<div class="page-header">
+		<h1>Projects</h1>
+		<p class="lead">Software I'm building and research I've done.</p>
+	</div>
+
+	<div class="project-grid">
+		{projects.map((project) => (
+			<a href={`/projects/${project.id}`} class="project-card">
+				<div class="card-top">
+					<span class={`status-badge status-${project.data.status}`}>
+						{statusLabel[project.data.status]}
+					</span>
+				</div>
+				<h3>{project.data.title}</h3>
+				<p>{project.data.summary}</p>
+				<div class="tags">
+					{project.data.tags.map((tag) => (
+						<span class="tag">{tag}</span>
+					))}
+				</div>
+			</a>
+		))}
+	</div>
+</PageLayout>
+
+<style>
+	.page-header {
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5em;
+		padding-bottom: 1em;
+	}
+	.page-header h1 {
+		font-size: 2em;
+		margin: 0 0 0.3em;
+	}
+	.lead {
+		color: rgb(var(--gray));
+		margin: 0;
+	}
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.25em;
+	}
+	.project-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6em;
+		padding: 1.5em;
+		background: white;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		text-decoration: none;
+		color: inherit;
+		transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+	}
+	.project-card:hover {
+		border-color: var(--accent);
+		transform: translateY(-2px);
+		box-shadow: var(--box-shadow);
+		color: inherit;
+	}
+	.card-top {
+		display: flex;
+		align-items: center;
+	}
+	.project-card h3 {
+		font-size: 1.05em;
+		margin: 0;
+	}
+	.project-card p {
+		color: rgb(var(--gray));
+		font-size: 0.88em;
+		margin: 0;
+		line-height: 1.55;
+		flex: 1;
+	}
+	.status-badge {
+		font-size: 0.7em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		padding: 0.2em 0.6em;
+		border-radius: 3px;
+	}
+	.status-active   { background: #e6f4ea; color: #2d7a3a; }
+	.status-complete { background: #e8edf4; color: #3a5278; }
+	.status-academic { background: #f2ede8; color: #7a5a3a; }
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+		margin-top: 0.25em;
+	}
+	.tag {
+		font-size: 0.75em;
+		color: rgb(var(--gray));
+		background-color: #f0ede8;
+		padding: 0.15em 0.5em;
+		border-radius: 3px;
+	}
+	@media (max-width: 600px) {
+		.project-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

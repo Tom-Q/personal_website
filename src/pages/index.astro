@@ -1,0 +1,155 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import heroImg from '../assets/20240108_184649-EDIT.jpg';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+
+		<div class="landing">
+			<div class="landing-photo">
+				<Image src={heroImg} alt="" />
+			</div>
+			<div class="landing-content">
+				<div class="landing-inner">
+					<h1>Thomas R. Colin</h1>
+					<p class="subtitle">Software developer &middot; Robotics researcher &middot; Mountaineer</p>
+					<nav class="nav-grid" aria-label="Site sections">
+						<a href="/projects" class="nav-card">
+							<h2>Projects</h2>
+							<p>Software, AI, and robotics research</p>
+						</a>
+						<a href="/outdoors" class="nav-card">
+							<h2>Outdoors</h2>
+							<p>Mountains, expeditions, and adventures</p>
+						</a>
+						<a href="/cv" class="nav-card">
+							<h2>CV</h2>
+							<p>Professional background</p>
+						</a>
+						<a href="/about" class="nav-card">
+							<h2>About</h2>
+							<p>Bio, contacts, and links</p>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.landing {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		height: calc(100vh - 56px);
+		min-height: 480px;
+	}
+
+	/* Photo half */
+	.landing-photo {
+		position: relative;
+		overflow: hidden;
+		background: #111;
+	}
+	.landing-photo img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 30%;
+		border-radius: 0;
+	}
+
+	/* Content half */
+	.landing-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 3em;
+		background: var(--bg);
+	}
+	.landing-inner {
+		max-width: 420px;
+		width: 100%;
+	}
+	.landing-inner h1 {
+		font-size: 2em;
+		margin-bottom: 0.2em;
+	}
+	.subtitle {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		margin: 0 0 2em;
+		letter-spacing: 0.02em;
+	}
+
+	/* Nav cards */
+	.nav-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.75em;
+	}
+	.nav-card {
+		display: block;
+		padding: 1.25em 1.5em;
+		background: white;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		text-decoration: none;
+		color: inherit;
+		transition:
+			border-color 0.15s,
+			transform 0.15s,
+			box-shadow 0.15s;
+	}
+	.nav-card:hover {
+		border-color: var(--accent);
+		transform: translateY(-2px);
+		box-shadow: var(--box-shadow);
+		color: inherit;
+	}
+	.nav-card h2 {
+		font-size: 1em;
+		margin-bottom: 0.25em;
+		color: var(--accent);
+	}
+	.nav-card p {
+		color: rgb(var(--gray));
+		font-size: 0.82em;
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	@media (max-width: 720px) {
+		.landing {
+			grid-template-columns: 1fr;
+			height: auto;
+		}
+		.landing-photo {
+			height: 42vh;
+			min-height: 220px;
+		}
+		.landing-photo img {
+			position: absolute;
+		}
+		.landing-content {
+			padding: 2em 1em;
+		}
+		.landing-inner {
+			max-width: 100%;
+		}
+	}
+</style>

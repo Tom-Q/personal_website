@@ -1,0 +1,204 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import adventuresImg from '../../assets/20240628_150045.jpg';
+import mountainImg   from '../../assets/20240815_154043.jpg';
+import hikingImg     from '../../assets/20240510_112320.jpg';
+import cyclingImg    from '../../assets/20240406_145029.jpg';
+import packraftImg   from '../../assets/20250302_135817~2.jpg';
+---
+
+<PageLayout
+	title="Outdoors — Thomas R. Colin"
+	description="Mountains, expeditions, and wild places. Mountaineering, hiking, cycling, packrafting, and sailing."
+	bodyClass="theme-outdoors"
+>
+	<div class="page-header">
+		<h1>Outdoors</h1>
+		<p class="lead">
+			Being outside — in the mountains, on rivers, on a bike, or on foot — is a central part of
+			my life. Here's an overview of what I do and where I've been.
+		</p>
+	</div>
+
+	<div class="content">
+
+		<div class="section-row">
+			<section class="section-text">
+				<h2>Adventures</h2>
+				<p>
+					Some trips go beyond a day out and become something else — multi-week expeditions into
+					remote terrain, where the weather, the approach, and the unknown are all part of the
+					undertaking. I write these up in full, with photographs and route details.
+				</p>
+				<ul>
+					<li><a href="/adventures/patagonia-2024">Patagonia 2024</a></li>
+					<li>Dent du Géant 2024 <span class="soon">(coming soon)</span></li>
+					<li>Norway 2025 <span class="soon">(coming soon)</span></li>
+					<li>Atlantic crossing 2025 <span class="soon">(coming soon)</span></li>
+					<li>Patagonia 2025 <span class="soon">(coming soon)</span></li>
+					<li>Amazon rainforest 2025 <span class="soon">(coming soon)</span></li>
+					<li>Calanques 2026 <span class="soon">(coming soon)</span></li>
+				</ul>
+			</section>
+			<div class="section-photo">
+				<Image src={adventuresImg} alt="Adventures" width={300} height={400} />
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="section-row">
+			<section class="section-text">
+				<h2>Mountaineering</h2>
+				<p>
+					[Placeholder — describe your mountaineering background: when you started, what draws you
+					to it, the style of climbing you do (alpine, expedition, rock), the ranges you've
+					climbed in.]
+				</p>
+				<p>
+					I keep a full log of routes and training on the
+					<a href="/outdoors/climbing">mountaineering page</a>.
+				</p>
+			</section>
+			<div class="section-photo">
+				<Image src={mountainImg} alt="Mountaineering" width={300} height={400} />
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="section-row">
+			<section class="section-text">
+				<h2>Hiking</h2>
+				<p>
+					[Placeholder — describe your hiking: multi-day routes, style (fastpacking, traditional
+					backpacking, trail running), notable trails or ranges you've done.]
+				</p>
+			</section>
+			<div class="section-photo">
+				<Image src={hikingImg} alt="Hiking" width={300} height={400} />
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="section-row">
+			<section class="section-text">
+				<h2>Cycling</h2>
+				<p>
+					[Placeholder — describe your cycling: road, gravel, or bikepacking. Distances, notable
+					rides, any touring you've done.]
+				</p>
+			</section>
+			<div class="section-photo">
+				<Image src={cyclingImg} alt="Cycling" width={300} height={400} />
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="section-row">
+			<section class="section-text">
+				<h2>Packrafting</h2>
+				<p>
+					Packrafting combines hiking and light inflatable rafting. A packraft weighs roughly
+					1–2 kg and packs down small enough to carry in a backpack, making it possible to cross
+					rivers, lakes, and fjords that would otherwise be impassable on foot.
+				</p>
+				<p>
+					[Placeholder — your packrafting experience: where you learned, how you've incorporated
+					it into expeditions.]
+				</p>
+			</section>
+			<div class="section-photo">
+				<Image src={packraftImg} alt="Packrafting" width={300} height={400} />
+			</div>
+		</div>
+
+		<hr />
+
+		<section class="section-text solo-section">
+			<h2>Sailing</h2>
+			<p>
+				[Placeholder — a short paragraph about sailing: your level, the boats you've crewed on,
+				what draws you to it. The Atlantic crossing 2025 is the flagship story here.]
+			</p>
+		</section>
+
+	</div>
+</PageLayout>
+
+<style>
+	.page-header {
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5em;
+		padding-bottom: 1em;
+	}
+	.page-header h1 {
+		font-size: 2.2em;
+		margin: 0 0 0.4em;
+	}
+	.lead {
+		color: rgb(var(--gray));
+		font-size: 1em;
+		margin: 0;
+		max-width: 600px;
+	}
+
+	.section-row {
+		display: grid;
+		grid-template-columns: 1fr 240px;
+		gap: 2.5em;
+		align-items: start;
+		margin-bottom: 0.5em;
+	}
+	.section-text h2 {
+		font-size: 1.4em;
+		margin-bottom: 0.6em;
+	}
+	.section-text p {
+		font-size: 0.95em;
+		line-height: 1.75;
+		color: rgb(var(--gray-dark));
+	}
+	.section-text ul {
+		padding-left: 1.25em;
+		margin: 0.25em 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.35em;
+	}
+	.section-text li {
+		font-size: 0.95em;
+	}
+	.soon {
+		color: rgb(var(--gray));
+		font-size: 0.85em;
+	}
+	.section-photo img {
+		width: 100%;
+		height: 320px;
+		object-fit: cover;
+		border-radius: 6px;
+		display: block;
+	}
+	.solo-section {
+		max-width: 620px;
+	}
+	hr {
+		margin: 2em 0;
+	}
+
+	@media (max-width: 680px) {
+		.section-row {
+			grid-template-columns: 1fr;
+		}
+		.section-photo {
+			order: -1;
+		}
+		.section-photo img {
+			height: 220px;
+		}
+	}
+</style>

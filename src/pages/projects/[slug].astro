@@ -1,0 +1,126 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const statusLabel: Record<string, string> = {
+	active: 'Active',
+	complete: 'Complete',
+	academic: 'Academic',
+};
+---
+
+<PageLayout
+	title={`${project.data.title} — Thomas R. Colin`}
+	description={project.data.summary}
+	bodyClass="theme-projects"
+>
+	<div class="project-header">
+		<a href="/projects" class="back-link">← All projects</a>
+		<div class="meta">
+			<span class={`status-badge status-${project.data.status}`}>
+				{statusLabel[project.data.status]}
+			</span>
+			<div class="tags">
+				{project.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+			</div>
+		</div>
+		<h1>{project.data.title}</h1>
+		<p class="summary">{project.data.summary}</p>
+	</div>
+
+	<hr />
+
+	<div class="prose">
+		<Content />
+	</div>
+</PageLayout>
+
+<style>
+	.project-header {
+		margin-bottom: 2em;
+		max-width: 720px;
+	}
+	.back-link {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		text-decoration: none;
+		display: inline-block;
+		margin-bottom: 1em;
+	}
+	.back-link:hover {
+		color: var(--accent);
+	}
+	.meta {
+		display: flex;
+		align-items: center;
+		gap: 0.75em;
+		flex-wrap: wrap;
+		margin-bottom: 0.75em;
+	}
+	.project-header h1 {
+		font-size: 2em;
+		margin: 0 0 0.4em;
+	}
+	.summary {
+		color: rgb(var(--gray));
+		font-size: 1em;
+		margin: 0;
+		line-height: 1.65;
+	}
+	hr {
+		margin: 2em 0;
+	}
+	.prose {
+		max-width: 720px;
+		font-size: 0.97em;
+		line-height: 1.75;
+	}
+	.prose :global(h2) {
+		font-size: 1.3em;
+		margin-top: 2em;
+		margin-bottom: 0.5em;
+	}
+	.prose :global(h3) {
+		font-size: 1.1em;
+		margin-top: 1.5em;
+		margin-bottom: 0.4em;
+	}
+
+	/* Status badges */
+	.status-badge {
+		font-size: 0.72em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		padding: 0.2em 0.6em;
+		border-radius: 3px;
+	}
+	.status-active   { background: #e6f4ea; color: #2d7a3a; }
+	.status-complete { background: #e8edf4; color: #3a5278; }
+	.status-academic { background: #f2ede8; color: #7a5a3a; }
+
+	/* Tags */
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+	}
+	.tag {
+		font-size: 0.75em;
+		color: rgb(var(--gray));
+		background-color: #f0ede8;
+		padding: 0.15em 0.5em;
+		border-radius: 3px;
+	}
+</style>

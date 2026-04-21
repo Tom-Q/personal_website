@@ -1,0 +1,254 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout title="CV — Thomas R. Colin" description="Professional background, experience, and publications of Thomas R. Colin." bodyClass="theme-projects">
+	<div class="page-header">
+		<div class="cv-title">
+			<h1>Thomas R. Colin, PhD</h1>
+			<p class="tagline">Software developer · Robotics researcher · Mountaineer</p>
+		</div>
+		<a href="#" class="download-btn" aria-label="Download CV as PDF">[Download PDF — placeholder]</a>
+	</div>
+
+	<section class="cv-section">
+		<h2>Experience</h2>
+		<div class="cv-entries">
+			<div class="cv-entry">
+				<div class="cv-entry-header">
+					<strong>Postdoctoral Researcher</strong>
+					<span class="cv-date">20XX – 20XX</span>
+				</div>
+				<div class="cv-entry-sub">[Institution] · [City, Country]</div>
+				<p>[Placeholder — description of postdoc work.]</p>
+			</div>
+			<div class="cv-entry">
+				<div class="cv-entry-header">
+					<strong>PhD Researcher</strong>
+					<span class="cv-date">20XX – 20XX</span>
+				</div>
+				<div class="cv-entry-sub">[Institution] · [City, Country]</div>
+				<p>[Placeholder — description of PhD work.]</p>
+			</div>
+		</div>
+	</section>
+
+	<hr />
+
+	<section class="cv-section">
+		<h2>Education</h2>
+		<div class="cv-entries">
+			<div class="cv-entry">
+				<div class="cv-entry-header">
+					<strong>PhD, [Field]</strong>
+					<span class="cv-date">20XX</span>
+				</div>
+				<div class="cv-entry-sub">[University] · [City, Country]</div>
+				<p>Thesis: <em>[Placeholder thesis title]</em></p>
+			</div>
+			<div class="cv-entry">
+				<div class="cv-entry-header">
+					<strong>Master's, [Field]</strong>
+					<span class="cv-date">20XX</span>
+				</div>
+				<div class="cv-entry-sub">[University] · [City, Country]</div>
+			</div>
+		</div>
+	</section>
+
+	<hr />
+
+	<section class="cv-section">
+		<h2>Technical Skills</h2>
+		<div class="skills-grid">
+			<div class="skill-group">
+				<h3>Languages</h3>
+				<p>Python, [others]</p>
+			</div>
+			<div class="skill-group">
+				<h3>AI / ML</h3>
+				<p>Large language models, reinforcement learning, deep learning</p>
+			</div>
+			<div class="skill-group">
+				<h3>Robotics</h3>
+				<p>ROS, user modeling, human-robot interaction</p>
+			</div>
+			<div class="skill-group">
+				<h3>Tools</h3>
+				<p>[Placeholder]</p>
+			</div>
+		</div>
+	</section>
+
+	<hr />
+
+	<section class="cv-section">
+		<h2>Selected Publications</h2>
+		<ol class="pub-list">
+			<li class="pub-entry">
+				<span class="pub-year">20XX</span>
+				<div class="pub-content">
+					<strong>[Placeholder title — USAR robot user modeling]</strong><br />
+					Thomas R. Colin, [co-authors] ·
+					<em>[Conference or Journal]</em>
+				</div>
+			</li>
+			<li class="pub-entry">
+				<span class="pub-year">20XX</span>
+				<div class="pub-content">
+					<strong>[Placeholder title — artificial creativity with RL]</strong><br />
+					Thomas R. Colin, [co-authors] ·
+					<em>[Conference or Journal]</em>
+				</div>
+			</li>
+			<li class="pub-entry">
+				<span class="pub-year">20XX</span>
+				<div class="pub-content">
+					<strong>[Placeholder title — representational similarity analysis]</strong><br />
+					Thomas R. Colin, [co-authors] ·
+					<em>[Journal]</em>
+				</div>
+			</li>
+			<li class="pub-entry">
+				<span class="pub-year">20XX</span>
+				<div class="pub-content">
+					<strong>[Placeholder title — Q*bert deep RL]</strong><br />
+					Thomas R. Colin, [co-authors] ·
+					<em>[Conference or Journal]</em>
+				</div>
+			</li>
+		</ol>
+	</section>
+</PageLayout>
+
+<style>
+	.page-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5em;
+		padding-bottom: 1.5em;
+		flex-wrap: wrap;
+	}
+	.cv-title h1 {
+		font-size: 1.8em;
+		margin-bottom: 0.2em;
+	}
+	.tagline {
+		color: rgb(var(--gray));
+		font-size: 0.95em;
+		margin: 0;
+	}
+	.download-btn {
+		display: inline-block;
+		padding: 0.5em 1.2em;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 4px;
+		font-size: 0.85em;
+		text-decoration: none;
+		color: rgb(var(--gray));
+		white-space: nowrap;
+		transition: border-color 0.15s, color 0.15s;
+	}
+	.download-btn:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+
+	/* Sections */
+	.cv-section {
+		margin-bottom: 2em;
+	}
+	.cv-section h2 {
+		font-size: 0.85em;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: rgb(var(--gray));
+		margin-bottom: 1.5em;
+	}
+	hr {
+		margin: 2em 0;
+	}
+
+	/* Entries */
+	.cv-entries {
+		display: flex;
+		flex-direction: column;
+		gap: 1.75em;
+	}
+	.cv-entry-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1em;
+	}
+	.cv-date {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		white-space: nowrap;
+	}
+	.cv-entry-sub {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		margin: 0.15em 0 0.5em;
+	}
+	.cv-entry p {
+		margin: 0;
+		font-size: 0.95em;
+	}
+
+	/* Skills */
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.25em 2em;
+	}
+	.skill-group h3 {
+		font-size: 0.9em;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.25em;
+	}
+	.skill-group p {
+		margin: 0;
+		font-size: 0.95em;
+	}
+
+	/* Publications */
+	.pub-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25em;
+		counter-reset: pub-counter;
+	}
+	.pub-entry {
+		display: flex;
+		gap: 1.5em;
+		align-items: baseline;
+	}
+	.pub-year {
+		color: rgb(var(--gray));
+		font-size: 0.85em;
+		min-width: 42px;
+	}
+	.pub-content {
+		font-size: 0.95em;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 600px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+		.cv-entry-header {
+			flex-direction: column;
+			gap: 0.1em;
+		}
+	}
+</style>

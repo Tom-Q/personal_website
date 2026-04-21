@@ -1,0 +1,93 @@
+---
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+interface Props {
+	slug: string;
+	images: string[];
+}
+const { slug, images } = Astro.props;
+
+type ManifestEntry = { name: string; w: number; h: number };
+let dims: Record<string, ManifestEntry> = {};
+try {
+	const raw = readFileSync(join('public', 'adventures', slug, 'manifest.json'), 'utf8');
+	const arr: ManifestEntry[] = JSON.parse(raw);
+	dims = Object.fromEntries(arr.map((e) => [e.name, e]));
+} catch {
+	// no manifest — PhotoSwipe will still open images, just without pre-known dimensions
+}
+---
+
+<section class="gallery-section">
+	<h2 class="gallery-heading">Photos</h2>
+	<div class="gallery" id="gallery">
+		{images.map((name) => (
+			<a
+				href={`/adventures/${slug}/full/${name}.webp`}
+				class="gallery-item"
+				data-pswp-width={dims[name]?.w}
+				data-pswp-height={dims[name]?.h}
+			>
+				<img
+					src={`/adventures/${slug}/thumb/${name}.webp`}
+					alt={name.replace(/-/g, ' ')}
+					loading="lazy"
+				/>
+			</a>
+		))}
+	</div>
+</section>
+
+<script>
+	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import 'photoswipe/style.css';
+
+	const lightbox = new PhotoSwipeLightbox({
+		gallery: '#gallery',
+		children: 'a',
+		pswpModule: () => import('photoswipe'),
+	});
+	lightbox.init();
+</script>
+
+<style>
+	.gallery-section {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 1em 4em;
+	}
+	.gallery-heading {
+		font-size: 0.8em;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: rgb(var(--gray));
+		margin-bottom: 1.25em;
+	}
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 6px;
+	}
+	.gallery-item {
+		display: block;
+		aspect-ratio: 4 / 3;
+		overflow: hidden;
+	}
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 0;
+		transition: opacity 0.15s;
+		display: block;
+	}
+	.gallery-item:hover img {
+		opacity: 0.88;
+	}
+	@media (max-width: 600px) {
+		.gallery {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>

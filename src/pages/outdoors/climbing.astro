@@ -1,0 +1,256 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import route1 from '../../assets/20240526_103137.jpg';
+import route2 from '../../assets/20240723_133527.jpg';
+import route3 from '../../assets/20240526_142100.jpg';
+
+const featuredRoutes = [
+	{
+		name: '[Placeholder route name]',
+		area: 'Patagonia, Chile',
+		grade: 'D',
+		year: 2024,
+		image: route1,
+		adventureLink: '/adventures/patagonia-2024',
+	},
+	{
+		name: 'Dent du Géant, via normale',
+		area: 'Mont Blanc massif',
+		grade: 'AD+',
+		year: 2024,
+		image: route2,
+		adventureLink: null,
+	},
+	{
+		name: '[Placeholder route name]',
+		area: 'Norway',
+		grade: 'TD',
+		year: 2025,
+		image: route3,
+		adventureLink: null,
+	},
+];
+
+const routes = [
+	{ date: 'Jan 2024', route: '[Route — placeholder]', area: 'Patagonia, Chile',   role: 'Shared leading', grade: 'D',   notes: 'First Patagonia expedition' },
+	{ date: 'Jul 2024', route: 'Dent du Géant, via normale', area: 'Mont Blanc massif', role: 'Guided',         grade: 'AD+', notes: '4013m' },
+	{ date: '2025',     route: '[Route — placeholder]',      area: 'Norway',           role: 'Shared leading', grade: 'TD',  notes: '' },
+	{ date: '2025',     route: '[Route — placeholder]',      area: 'Patagonia, Chile', role: 'Shared leading', grade: 'ED-', notes: 'Second Patagonia expedition' },
+	{ date: '2026',     route: '[Route — placeholder]',      area: 'Calanques',        role: 'Leader',         grade: '6a',  notes: 'Day climbing' },
+];
+
+const training = [
+	'[Placeholder] — Lead climbing course, [Year]',
+	'[Placeholder] — Avalanche safety (AIARE / equivalent), [Year]',
+	'[Placeholder] — Crevasse rescue, [Year]',
+	'[Placeholder] — Wilderness first aid, [Year]',
+];
+---
+
+<PageLayout
+	title="Mountaineering — Thomas R. Colin"
+	description="Mountaineering route log, grades, and training record."
+	bodyClass="theme-outdoors"
+>
+	<div class="page-header">
+		<div>
+			<a href="/outdoors" class="back-link">← Outdoors</a>
+			<h1>Mountaineering</h1>
+		</div>
+	</div>
+
+	<!-- Featured routes -->
+	<section class="featured">
+		<h2 class="section-label">Featured routes</h2>
+		<div class="featured-grid">
+			{
+				featuredRoutes.map((r) => (
+					<div class="route-card">
+						<div class="route-img">
+							<Image src={r.image} alt="" width={420} height={280} />
+						</div>
+						<div class="route-info">
+							<div class="route-meta">
+								{r.area} &middot; {r.grade} &middot; {r.year}
+							</div>
+							<h3>{r.name}</h3>
+							{r.adventureLink && (
+								<a href={r.adventureLink} class="route-link">
+									Read the story →
+								</a>
+							)}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<hr />
+
+	<!-- Full route log -->
+	<section class="route-log">
+		<h2 class="section-label">Route log</h2>
+		<div class="table-wrapper">
+			<table>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Route</th>
+						<th>Area</th>
+						<th>Role</th>
+						<th>Grade</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						routes.map((r) => (
+							<tr>
+								<td class="date-cell">{r.date}</td>
+								<td>{r.route}</td>
+								<td>{r.area}</td>
+								<td>{r.role}</td>
+								<td class="grade-cell">{r.grade}</td>
+								<td class="notes-cell">{r.notes}</td>
+							</tr>
+						))
+					}
+				</tbody>
+			</table>
+		</div>
+		<p class="table-note">
+			Alpine grades: F · PD · AD · D · TD · ED. Rock grades: French numerical.
+		</p>
+	</section>
+
+	<hr />
+
+	<!-- Training -->
+	<section class="training">
+		<h2 class="section-label">Training & courses</h2>
+		<ul class="training-list">
+			{training.map((item) => <li>{item}</li>)}
+		</ul>
+	</section>
+</PageLayout>
+
+<style>
+	.page-header {
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5em;
+		padding-bottom: 1em;
+	}
+	.back-link {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		text-decoration: none;
+		display: inline-block;
+		margin-bottom: 0.4em;
+	}
+	.back-link:hover {
+		color: var(--accent);
+	}
+	.page-header h1 {
+		font-size: 2em;
+		margin: 0;
+	}
+	.section-label {
+		font-size: 0.85em;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: rgb(var(--gray));
+		margin-bottom: 1.25em;
+	}
+	hr {
+		margin: 2.5em 0;
+	}
+
+	/* Featured routes */
+	.featured {
+		margin-bottom: 2.5em;
+	}
+	.featured-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25em;
+	}
+	.route-card {
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		overflow: hidden;
+		background: white;
+	}
+	.route-img img {
+		width: 100%;
+		height: 180px;
+		object-fit: cover;
+		border-radius: 0;
+		display: block;
+	}
+	.route-info {
+		padding: 1em;
+	}
+	.route-meta {
+		font-size: 0.75em;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.4em;
+	}
+	.route-info h3 {
+		font-size: 0.95em;
+		margin: 0 0 0.5em;
+	}
+	.route-link {
+		font-size: 0.85em;
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.route-link:hover {
+		color: var(--accent-dark);
+	}
+
+	/* Route table */
+	.table-wrapper {
+		overflow-x: auto;
+	}
+	table {
+		font-size: 0.9em;
+	}
+	.date-cell {
+		white-space: nowrap;
+		color: rgb(var(--gray));
+	}
+	.grade-cell {
+		font-weight: 700;
+		white-space: nowrap;
+	}
+	.notes-cell {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+	}
+	.table-note {
+		font-size: 0.8em;
+		color: rgb(var(--gray));
+		margin-top: 0.75em;
+	}
+
+	/* Training */
+	.training-list {
+		padding-left: 1.25em;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		font-size: 0.95em;
+		color: rgb(var(--gray-dark));
+	}
+
+	@media (max-width: 640px) {
+		.featured-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

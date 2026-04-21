@@ -1,0 +1,91 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout title="About — Thomas R. Colin" description="Bio, contacts, and links for Thomas R. Colin." bodyClass="theme-projects">
+	<div class="page-header">
+		<h1>About</h1>
+	</div>
+
+	<section class="bio">
+		<p>
+			[Placeholder — bio coming soon.]
+		</p>
+		<p>
+			I'm a software developer and researcher with a background in robotics, artificial intelligence,
+			and cognitive science. I did my PhD and postdoc at [Institution], where I worked on
+			[research area]. I'm now transitioning toward building software products, with a focus on
+			conversational AI and human-computer interaction.
+		</p>
+		<p>
+			Outside of work, I spend as much time as possible in the mountains — mountaineering,
+			packrafting, hiking, and cycling. I've led expeditions to Patagonia, Norway, the Amazon,
+			and the Atlantic, and I'm always planning the next one.
+		</p>
+	</section>
+
+	<hr />
+
+	<section class="contact">
+		<h2>Contact & Links</h2>
+		<ul class="link-list">
+			<li>
+				<span class="link-label">Email</span>
+				<a href="mailto:placeholder@email.com">placeholder@email.com</a>
+			</li>
+			<li>
+				<span class="link-label">GitHub</span>
+				<a href="https://github.com/thomasrcolin" target="_blank">github.com/thomasrcolin</a>
+			</li>
+			<li>
+				<span class="link-label">LinkedIn</span>
+				<a href="https://linkedin.com/in/thomasrcolin" target="_blank">linkedin.com/in/thomasrcolin</a>
+			</li>
+		</ul>
+	</section>
+</PageLayout>
+
+<style>
+	.page-header {
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2em;
+		padding-bottom: 0.5em;
+	}
+	.page-header h1 {
+		font-size: 2em;
+		margin: 0;
+	}
+	.bio {
+		margin-bottom: 2.5em;
+	}
+	hr {
+		margin: 2em 0;
+	}
+	.contact h2 {
+		font-size: 1.2em;
+		margin-bottom: 1.25em;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: rgb(var(--gray));
+	}
+	.link-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75em;
+	}
+	.link-list li {
+		display: flex;
+		align-items: baseline;
+		gap: 1.25em;
+	}
+	.link-label {
+		font-size: 0.85em;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: rgb(var(--gray));
+		min-width: 80px;
+	}
+</style>

@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from 'astro:content';
+import AdventureLayout from '../../layouts/AdventureLayout.astro';
+
+export async function getStaticPaths() {
+	const adventures = await getCollection('adventures');
+	return adventures.map((adventure) => ({
+		params: { slug: adventure.id },
+		props: { adventure },
+	}));
+}
+
+const { adventure } = Astro.props;
+const { Content } = await render(adventure);
+---
+
+<AdventureLayout {...adventure.data} slug={adventure.id}>
+	<Content />
+</AdventureLayout>

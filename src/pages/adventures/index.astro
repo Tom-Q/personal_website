@@ -1,0 +1,124 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const adventures = (await getCollection('adventures')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<PageLayout title="Adventures — Thomas R. Colin" description="Expeditions, mountaineering trips, and outdoor adventures." bodyClass="theme-outdoors">
+	<div class="page-header">
+		<h1>Adventures</h1>
+		<p class="lead">Expedition reports and stories from the field.</p>
+	</div>
+
+	<ul class="adventure-list">
+		{
+			adventures.map((adventure) => (
+				<li>
+					<a href={`/adventures/${adventure.id}`} class="adventure-card">
+						<div class="adventure-img">
+							<Image
+								src={adventure.data.heroImage}
+								alt=""
+								width={400}
+								height={260}
+							/>
+						</div>
+						<div class="adventure-info">
+							<div class="adventure-meta">
+								{adventure.data.location} &middot; {adventure.data.date.getFullYear()}
+							</div>
+							<h2>{adventure.data.title}</h2>
+							<p>{adventure.data.summary}</p>
+						</div>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</PageLayout>
+
+<style>
+	.page-header {
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5em;
+		padding-bottom: 1em;
+	}
+	.page-header h1 {
+		font-size: 2em;
+		margin: 0 0 0.3em;
+	}
+	.lead {
+		color: rgb(var(--gray));
+		margin: 0;
+		font-size: 1em;
+	}
+	.adventure-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+	}
+	.adventure-card {
+		display: grid;
+		grid-template-columns: 280px 1fr;
+		gap: 1.75em;
+		text-decoration: none;
+		color: inherit;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		overflow: hidden;
+		background: white;
+		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+	.adventure-card:hover {
+		border-color: var(--accent);
+		box-shadow: var(--box-shadow);
+	}
+	.adventure-img img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 0;
+		display: block;
+	}
+	.adventure-info {
+		padding: 1.5em 1.5em 1.5em 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.adventure-meta {
+		font-size: 0.8em;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.5em;
+	}
+	.adventure-info h2 {
+		font-size: 1.3em;
+		margin: 0 0 0.5em;
+	}
+	.adventure-info p {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		margin: 0;
+		line-height: 1.6;
+	}
+	@media (max-width: 640px) {
+		.adventure-card {
+			grid-template-columns: 1fr;
+		}
+		.adventure-img img {
+			height: 220px;
+		}
+		.adventure-info {
+			padding: 1.25em;
+		}
+	}
+</style>
