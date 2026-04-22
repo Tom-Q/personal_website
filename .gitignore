@@ -21,6 +21,7 @@ pnpm-debug.log*
 .DS_Store
 
 # original photos (pre-conversion)
+raw_photos/norway2025/
 raw_photos/
 
 
