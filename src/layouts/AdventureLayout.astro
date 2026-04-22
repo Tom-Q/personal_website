@@ -79,9 +79,38 @@ const { title, date, location, heroImage, summary, gallery = [], slug } = Astro.
 				background: var(--bg);
 			}
 			.prose {
-				max-width: 720px;
+				max-width: 640px;
 				margin: auto;
 				padding: 3em 1em;
+			}
+			.prose :global(p) {
+				text-align: justify;
+				hyphens: auto;
+			}
+			.prose :global(h2) {
+				clear: both;
+			}
+			.prose :global(.float-right) {
+				float: right;
+				clear: right;
+				width: 330px;
+				margin: 0.3em -390px 1.5em 1.5em;
+				border-radius: 4px;
+			}
+			.prose :global(.float-left) {
+				float: left;
+				clear: left;
+				width: 330px;
+				margin: 0.3em 1.5em 1.5em -390px;
+				border-radius: 4px;
+			}
+			@media (max-width: 1100px) {
+				.prose :global(.float-right),
+				.prose :global(.float-left) {
+					float: none;
+					width: 100%;
+					margin: 1em 0;
+				}
 			}
 			.back-link {
 				display: inline-block;

@@ -1,6 +1,36 @@
 [
   {
+    "name": "bike",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "bridge",
+    "w": 2400,
+    "h": 1800
+  },
+  {
+    "name": "carretera",
+    "w": 2400,
+    "h": 1600
+  },
+  {
     "name": "condor",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "condor2",
+    "w": 2400,
+    "h": 2286
+  },
+  {
+    "name": "cordilleraesmeralda",
+    "w": 2400,
+    "h": 3600
+  },
+  {
+    "name": "cordilleraesmeralda2",
     "w": 2400,
     "h": 1600
   },
@@ -15,6 +45,11 @@
     "h": 1640
   },
   {
+    "name": "guanacos",
+    "w": 2400,
+    "h": 1931
+  },
+  {
     "name": "horsefly",
     "w": 913,
     "h": 880
@@ -25,9 +60,29 @@
     "h": 3199
   },
   {
+    "name": "huemul2",
+    "w": 2400,
+    "h": 1302
+  },
+  {
+    "name": "lacs",
+    "w": 2400,
+    "h": 1859
+  },
+  {
+    "name": "lagobertrand",
+    "w": 2400,
+    "h": 1600
+  },
+  {
     "name": "norte",
     "w": 2400,
     "h": 1933
+  },
+  {
+    "name": "path",
+    "w": 2400,
+    "h": 1800
   },
   {
     "name": "plomo",
@@ -35,9 +90,24 @@
     "h": 1600
   },
   {
+    "name": "puma1",
+    "w": 2400,
+    "h": 1335
+  },
+  {
+    "name": "pumagrass",
+    "w": 2400,
+    "h": 1479
+  },
+  {
     "name": "raft",
     "w": 2400,
     "h": 1600
+  },
+  {
+    "name": "rainbow",
+    "w": 2400,
+    "h": 2002
   },
   {
     "name": "road",
@@ -48,5 +118,15 @@
     "name": "tent",
     "w": 2400,
     "h": 1111
+  },
+  {
+    "name": "valleycloud",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "zipline",
+    "w": 2400,
+    "h": 3200
   }
 ]

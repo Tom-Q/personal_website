@@ -10,7 +10,7 @@
  */
 
 import sharp from 'sharp';
-import { readdir, mkdir, writeFile } from 'fs/promises';
+import { readdir, mkdir, rename, writeFile } from 'fs/promises';
 import { join, basename, extname } from 'path';
 
 const [rawFolder, slug] = process.argv.slice(2);
@@ -40,16 +40,25 @@ for (const file of files) {
 	const inputPath = join(inputDir, file);
 
 	await sharp(inputPath)
+		.rotate()
 		.resize({ width: 800, withoutEnlargement: true })
 		.webp({ quality: 82 })
 		.toFile(join(thumbDir, `${stem}.webp`));
 
 	const { width, height } = await sharp(inputPath)
+		.rotate()
 		.resize({ width: 2400, withoutEnlargement: true })
 		.webp({ quality: 85 })
 		.toFile(join(fullDir, `${stem}.webp`));
 
 	manifest.push({ name: stem, w: width, h: height });
+
+	const ext = extname(file);
+	const newFilename = `${stem}${ext.toLowerCase()}`;
+	if (file !== newFilename) {
+		await rename(join(inputDir, file), join(inputDir, newFilename));
+	}
+
 	console.log(`  ✓ ${file} → ${stem}.webp (${width}×${height})`);
 }
 
