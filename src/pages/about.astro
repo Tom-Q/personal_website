@@ -9,18 +9,17 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 	<section class="bio">
 		<p>
-			[Placeholder — bio coming soon.]
+			I'm a software and ML engineer with a background spanning a decade of academic research
+			and several years of industry software development. My research — conducted during a PhD
+			in Cognitive Science at Plymouth University and a postdoc at Ghent University — focused
+			on computational modeling of cognition and brain function, using deep learning and
+			reinforcement learning. I'm now focused on building software products, with a particular
+			interest in applied ML and conversational AI.
 		</p>
 		<p>
-			I'm a software developer and researcher with a background in robotics, artificial intelligence,
-			and cognitive science. I did my PhD and postdoc at [Institution], where I worked on
-			[research area]. I'm now transitioning toward building software products, with a focus on
-			conversational AI and human-computer interaction.
-		</p>
-		<p>
-			Outside of work, I spend as much time as possible in the mountains — mountaineering,
-			packrafting, hiking, and cycling. I've led expeditions to Patagonia, Norway, the Amazon,
-			and the Atlantic, and I'm always planning the next one.
+			Outside of work, I spend as much time as possible outdoors — hiking, packrafting, and
+			technical alpinism, with the occasional larger expedition. I've traveled self-supported
+			to Patagonia, the Arctic, and the Amazon rainforest, and I'm always planning the next one.
 		</p>
 	</section>
 
@@ -31,15 +30,18 @@ import PageLayout from '../layouts/PageLayout.astro';
 		<ul class="link-list">
 			<li>
 				<span class="link-label">Email</span>
-				<a href="mailto:placeholder@email.com">placeholder@email.com</a>
+				<span id="contact-email">[enable JavaScript to view]</span>
+				<script>
+					document.getElementById('contact-email').textContent = 'thomas.r.colin' + ' @ ' + 'gmail';
+				</script>
 			</li>
 			<li>
 				<span class="link-label">GitHub</span>
-				<a href="https://github.com/thomasrcolin" target="_blank">github.com/thomasrcolin</a>
+				<a href="https://github.com/Tom-Q" target="_blank">github.com/Tom-Q</a>
 			</li>
 			<li>
 				<span class="link-label">LinkedIn</span>
-				<a href="https://linkedin.com/in/thomasrcolin" target="_blank">linkedin.com/in/thomasrcolin</a>
+				<a href="https://www.linkedin.com/in/thomas-colin-phd" target="_blank">linkedin.com/in/thomas-colin-phd</a>
 			</li>
 		</ul>
 	</section>
@@ -86,6 +88,6 @@ import PageLayout from '../layouts/PageLayout.astro';
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		color: rgb(var(--gray));
-		min-width: 80px;
+		min-width: 90px;
 	}
 </style>
