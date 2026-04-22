@@ -1,12 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import PageLayout from '../../layouts/PageLayout.astro';
-import adventuresImg from '../../assets/20240628_150045.jpg';
-import mountainImg   from '../../assets/20240815_154043.jpg';
-import hikingImg     from '../../assets/20240510_112320.jpg';
-import cyclingImg    from '../../assets/20240406_145029.jpg';
-import packraftImg   from '../../assets/20250302_135817~2.jpg';
-import climbImg   from '../../assets/20250302_135817~2.jpg';
+import adventuresImg from '../../assets/adventures.jpg';
+import mountainImg   from '../../assets/mountaineering.JPG';
+import hikingImg     from '../../assets/hiking.jpg';
+import cyclingImg    from '../../assets/cycling.jpg';
+import packraftImg   from '../../assets/packrafting.jpg';
+import climbImg      from '../../assets/climbing.jpg';
+import sailingImg    from '../../assets/sailing.jpg';
 ---
 
 <PageLayout
@@ -145,17 +146,21 @@ import climbImg   from '../../assets/20250302_135817~2.jpg';
 
 		<hr />
 
-		<section class="section-text solo-section">
-			<h2>Sailing</h2>
-			<p>
-				I haven't done much sailing: I used to go on those tiny "optimiste" boats on holidays as a child. 
-				For my 2025 trip in Latin America I wanted to avoid taking the plane for climate reasons, so I joined
-				the "trainees"/passengers of a tall ship, the Morgenster. It was challenging! I think mountaineering is
-				more my thing, but this was still a beautiful adventure and I hope I'll get back to sailing on smaller
-				ships eventually. 
-				[link to atlantic crossing adventure page]
-			</p>
-		</section>
+		<div class="section-row">
+			<section class="section-text">
+				<h2>Sailing</h2>
+				<p>
+					I haven't done much sailing: I used to go on those tiny "optimiste" boats on holidays as a child.
+					For my 2025 trip in Latin America I wanted to avoid taking the plane for climate reasons, so I joined
+					the "trainees"/passengers of a tall ship, the Morgenster. It was challenging! I think mountaineering is
+					more my thing, but this was still a beautiful adventure and I hope I'll get back to sailing on smaller
+					ships eventually.
+				</p>
+			</section>
+			<div class="section-photo">
+				<Image src={sailingImg} alt="Sailing" width={300} height={400} />
+			</div>
+		</div>
 
 	</div>
 </PageLayout>
