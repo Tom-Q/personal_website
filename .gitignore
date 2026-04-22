@@ -23,13 +23,6 @@ pnpm-debug.log*
 # original photos (pre-conversion)
 raw_photos/
 
-# raw source images (processed versions live in public/adventures/)
-src/assets/*.jpg
-src/assets/*.jpeg
-src/assets/*.JPG
-src/assets/*.JPEG
-src/assets/*.png
-src/assets/*.PNG
 
 # jetbrains setting folder
 .idea/
