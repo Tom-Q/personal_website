@@ -16,7 +16,7 @@ const { Content } = await render(project);
 const statusLabel: Record<string, string> = {
 	active: 'Active',
 	complete: 'Complete',
-	academic: 'Academic',
+	'on-hold': 'On hold',
 };
 ---
 
@@ -106,9 +106,9 @@ const statusLabel: Record<string, string> = {
 		padding: 0.2em 0.6em;
 		border-radius: 3px;
 	}
-	.status-active   { background: #e6f4ea; color: #2d7a3a; }
-	.status-complete { background: #e8edf4; color: #3a5278; }
-	.status-academic { background: #f2ede8; color: #7a5a3a; }
+	.status-active    { background: #e6f4ea; color: #2d7a3a; }
+	.status-complete  { background: #e8edf4; color: #3a5278; }
+	.status-on-hold { background: #f5f0e8; color: #7a6a3a; }
 
 	/* Tags */
 	.tags {

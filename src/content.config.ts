@@ -23,7 +23,7 @@ const projects = defineCollection({
 			title: z.string(),
 			summary: z.string(),
 			tags: z.array(z.string()).default([]),
-			status: z.enum(['active', 'complete', 'academic']),
+			status: z.enum(['active', 'complete', 'on-hold']),
 			order: z.number().default(99),
 			heroImage: image().optional(),
 		}),
