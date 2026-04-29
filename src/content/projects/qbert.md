@@ -80,3 +80,5 @@ This did not work reliably. The architecture is unstable during learning, and th
 ## Status
 
 On hold. The observer modules work well and the representational analyses are informative — results were presented at the 2025 RLDM conference ([poster](/projects/qbert/poster_rldm_portrait.pdf)). Whether and when to return to the controller problem is an open question.
+
+This work was carried out during my postdoc in Clay Holroyd's Learning and Cognitive Control Lab at Ghent University, funded by the European Research Council under the EU's Horizon 2020 programme (grant 787307).
