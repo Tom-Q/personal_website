@@ -12,21 +12,21 @@ The work described here addresses this question by training recurrent neural net
 
 ## The models and task
 
-For the RSA study, participants performed a gamified "coffee-tea task" on a screen inside an MRI scanner: choose a beverage, make ingredient choices, and carry out the preparation sequence step by step using button presses. The sequences are short but hierarchically structured — a top-level goal (coffee or tea), subgoals for each ingredient, and individual motor actions. The same task was used to train the network models, enabling a direct representational comparison between model and brain.
+For the RSA study, participants performed a gamified "coffee-tea task" on a screen inside an MRI scanner: choose a beverage, make ingredient choices, and carry out the preparation sequence step by step using button presses. The sequences are short but hierarchically structured: a top-level goal (coffee or tea), subgoals for each ingredient, and individual motor actions. The same task was used to train the network models, enabling a direct representational comparison between model and brain.
 
-Three recurrent network architectures were compared. The **Elman network** is a standard RNN: a hidden layer whose activations are copied to a context layer and fed back on the next time step, giving the network working memory across the sequence. The **Goal Network** extends this by adding explicit goal and subgoal units — recurrent output layers that actively represent the current high-level goal ("make coffee" or "make tea") and the current subgoal ("add sugar," "add cream," etc.) throughout each sequence. These are trained jointly with the action output, providing a top-down signal that biases the hidden layer toward goal-relevant representations.
+Three recurrent network architectures were compared. The **Elman network** is a standard RNN: a hidden layer whose activations are copied to a context layer and fed back on the next time step, giving the network working memory across the sequence. The **Goal Network** extends this by adding explicit goal and subgoal units, recurrent output layers that actively represent the current high-level goal ("make coffee" or "make tea") and the current subgoal ("add sugar," "add cream," etc.) throughout each sequence. These are trained jointly with the action output, providing a top-down signal that biases the hidden layer toward goal-relevant representations.
 
 <img src="/projects/rsa/goal_network.png" alt="Goal Network architecture diagram" style="max-width:350px;width:100%;margin:1.5em auto;display:block" />
 
 *The Goal Network architecture. Goal and subgoal units form additional recurrent output layers that maintain active task context throughout the sequence, on top of the standard Elman context layer.*
 
-A third model, the **Gradient Network**, adds wiring costs to the loss function — a penalty on long-distance connections within the hidden layer. This encourages the network to develop a spatial gradient of abstraction: units closer to the action output specialize in concrete, step-level representations, while units farther away capture more abstract, goal-level structure. This mirrors the proposed rostro-caudal gradient along human ACC.
+A third model, the **Gradient Network**, adds wiring costs to the loss function, specifically a penalty on long-distance connections within the hidden layer. This encourages the network to develop a spatial gradient of abstraction: units closer to the action output specialize in concrete, step-level representations, while units farther away capture more abstract, goal-level structure. This mirrors the proposed rostro-caudal gradient along human ACC.
 
-A separate, larger-scale study (kitchen environment, 21 sequences) compared these architectures behaviorally and showed that goal units improve generalization to novel sequences — a prerequisite for the RSA work.
+A separate, larger-scale study (kitchen environment, 21 sequences) compared these architectures behaviorally and showed that goal units improve generalization to novel sequences, a prerequisite for the RSA work.
 
 ## What is representational similarity analysis?
 
-RSA is a method for comparing the representational structure of two systems — a neural network and a brain, for instance — without needing a direct mapping between individual units and voxels. The key insight is that you can compare *geometries* rather than representations themselves.
+RSA is a method for comparing the representational structure of two systems (a neural network and a brain, for instance) without needing a direct mapping between individual units and voxels. The key insight is that you can compare *geometries* rather than representations themselves.
 
 The method works in three steps.
 
@@ -42,7 +42,7 @@ The method works in three steps.
 
 *A cartoon RDM with a small number of conditions. The diagonal is zero (each condition compared with itself). Off-diagonal values reflect how differently each pair of steps is represented — lower values indicate more similar representations.*
 
-**Step 3: Compare RDMs.** Take the RDM from the network and the RDM from a brain region, and compute the Spearman rank-order correlation between their entries. A high correlation means both systems organize the same conditions in geometrically similar ways — even if the underlying representations are completely different in kind (unit activations vs. BOLD signal). This is what makes RSA useful: it is a second-order measure, agnostic to the representational format.
+**Step 3: Compare RDMs.** Take the RDM from the network and the RDM from a brain region, and compute the Spearman rank-order correlation between their entries. A high correlation means both systems organize the same conditions in geometrically similar ways, even if the underlying representations are completely different in kind (unit activations vs. BOLD signal). This is what makes RSA useful: it is a second-order measure, agnostic to the representational format.
 
 ## How RSA was applied here
 
@@ -52,7 +52,7 @@ For the **brain RDMs**: a searchlight analysis was used. A 3×3×3 voxel cube wa
 
 ## What the representations encode
 
-Before examining the brain results, it helps to understand what the goal units actually do to the network's representational space. The t-SNE visualization below shows the trajectory of hidden layer activations across two sequences — one seen in training and one novel — and demonstrates what happens when goal unit activations are manually shifted to match a specific subgoal mid-sequence.
+Before examining the brain results, it helps to understand what the goal units actually do to the network's representational space. The t-SNE visualization below shows the trajectory of hidden layer activations across two sequences (one seen in training, one novel) and demonstrates what happens when goal unit activations are manually shifted to match a specific subgoal mid-sequence.
 
 <img src="/projects/rsa/tsne.png" alt="t-SNE of hidden layer trajectories with and without goal manipulation" style="max-width:700px;width:100%;margin:1.5em auto;display:block" />
 
@@ -72,8 +72,8 @@ The Gradient Network makes this dissociation directly testable. When the RDM is 
 
 ## What this means
 
-The results support a view in which ACC encodes sequential task context in a representational geometry shaped by goal structure — not just the immediate action being taken. A network that explicitly represents goals encodes that geometry more strongly and more rostrally than one that does not, in line with the hypothesized rostro-caudal abstraction gradient. At the same time, these representations remain distributed: the goal units do not create a discrete lookup table but steer a continuous hidden-state trajectory.
+The results support a view in which ACC encodes sequential task context in a representational geometry shaped by goal structure, not just the immediate action being taken. A network that explicitly represents goals encodes that geometry more strongly and more rostrally than one that does not, in line with the hypothesized rostro-caudal abstraction gradient. At the same time, these representations remain distributed: the goal units do not create a discrete lookup table but steer a continuous hidden-state trajectory.
 
-RSA is what makes this comparison tractable. Comparing a neural network's hidden activations against fMRI BOLD directly would require arbitrary assumptions about how units map to voxels. Comparing their RDMs sidesteps this entirely, asking only whether the two systems organize the same set of conditions in the same way — which turns out to be a meaningful and answerable question.
+RSA is what makes this comparison tractable. Comparing a neural network's hidden activations against fMRI BOLD directly would require arbitrary assumptions about how units map to voxels. Comparing their RDMs sidesteps this entirely, asking only whether the two systems organize the same set of conditions in the same way, which turns out to be a meaningful and answerable question.
 
 This work was carried out during my postdoc in Clay Holroyd's Learning and Cognitive Control Lab at Ghent University, and was funded by the European Research Council under the EU's Horizon 2020 programme (grant 787307).
