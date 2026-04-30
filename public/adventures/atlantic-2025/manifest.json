@@ -1,0 +1,187 @@
+[
+  {
+    "name": "beach",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "beach2",
+    "w": 2400,
+    "h": 1248
+  },
+  {
+    "name": "deathisland",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "dolphins",
+    "w": 2400,
+    "h": 1722
+  },
+  {
+    "name": "fous",
+    "w": 2034,
+    "h": 2581
+  },
+  {
+    "name": "fous2",
+    "w": 1083,
+    "h": 2067
+  },
+  {
+    "name": "gold",
+    "w": 2400,
+    "h": 1476
+  },
+  {
+    "name": "horizon",
+    "w": 2400,
+    "h": 1637
+  },
+  {
+    "name": "night",
+    "w": 2400,
+    "h": 2070
+  },
+  {
+    "name": "rodent",
+    "w": 2400,
+    "h": 1606
+  },
+  {
+    "name": "sails",
+    "w": 2400,
+    "h": 1609
+  },
+  {
+    "name": "shark",
+    "w": 2400,
+    "h": 2295
+  },
+  {
+    "name": "sunset",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "tenerife",
+    "w": 2400,
+    "h": 4888
+  },
+  {
+    "name": "tenerife2",
+    "w": 2400,
+    "h": 2781
+  },
+  {
+    "name": "tenerife3",
+    "w": 2320,
+    "h": 3648
+  },
+  {
+    "name": "tenerife4",
+    "w": 2400,
+    "h": 2174
+  },
+  {
+    "name": "turtle",
+    "w": 2400,
+    "h": 2013
+  },
+  {
+    "name": "twilight",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "twilight2",
+    "w": 2400,
+    "h": 1544
+  },
+  {
+    "name": "waves",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "whitebirds",
+    "w": 2400,
+    "h": 2501
+  },
+  {
+    "name": "atthehelm",
+    "w": 2400,
+    "h": 3530
+  },
+  {
+    "name": "bryc",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "caboverdefalcon",
+    "w": 2400,
+    "h": 3186
+  },
+  {
+    "name": "caboverdehike1",
+    "w": 2400,
+    "h": 2286
+  },
+  {
+    "name": "caboverdehike2",
+    "w": 2400,
+    "h": 3200
+  },
+  {
+    "name": "caboverdehike3",
+    "w": 2400,
+    "h": 1600
+  },
+  {
+    "name": "morgenster",
+    "w": 1950,
+    "h": 1913
+  },
+  {
+    "name": "noronha1",
+    "w": 2167,
+    "h": 1752
+  },
+  {
+    "name": "noronha2",
+    "w": 2400,
+    "h": 1960
+  },
+  {
+    "name": "ocean",
+    "w": 2400,
+    "h": 1800
+  },
+  {
+    "name": "ocean2",
+    "w": 2400,
+    "h": 1800
+  },
+  {
+    "name": "ocean3",
+    "w": 2400,
+    "h": 1800
+  },
+  {
+    "name": "oceantwilight2",
+    "w": 2400,
+    "h": 1806
+  },
+  {
+    "name": "tenerife_twilight",
+    "w": 2400,
+    "h": 1800
+  },
+  {
+    "name": "twilightocean",
+    "w": 2400,
+    "h": 1800
+  }
+]
