@@ -1,0 +1,167 @@
+[
+    {
+        "name": "lapazbusy",
+        "w": 2400,
+        "h": 1955
+    },
+    {
+        "name": "lapaz1",
+        "w": 2400,
+        "h": 1813
+    },
+    {
+        "name": "gear",
+        "w": 1800,
+        "h": 2400
+    },
+    {
+        "name": "approach",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "rearguardandmachete",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "rearguardandmachete2",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "hike",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "eslabon3",
+        "w": 2400,
+        "h": 1512
+    },
+    {
+        "name": "eslabon2",
+        "w": 2400,
+        "h": 2042
+    },
+    {
+        "name": "eslabon0",
+        "w": 2400,
+        "h": 1600
+    },
+    {
+        "name": "in_hammoc",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "capys1",
+        "w": 2400,
+        "h": 1600
+    },
+    {
+        "name": "capys2",
+        "w": 940,
+        "h": 1520
+    },
+    {
+        "name": "capys3",
+        "w": 2400,
+        "h": 1600
+    },
+    {
+        "name": "eslabon6",
+        "w": 2400,
+        "h": 1501
+    },
+    {
+        "name": "eslabon1",
+        "w": 2400,
+        "h": 1347
+    },
+    {
+        "name": "eslabon5",
+        "w": 1270,
+        "h": 2630
+    },
+    {
+        "name": "eslabon4",
+        "w": 2400,
+        "h": 2568
+    },
+    {
+        "name": "capybaras",
+        "w": 1639,
+        "h": 1544
+    },
+    {
+        "name": "camp",
+        "w": 2400,
+        "h": 1814
+    },
+    {
+        "name": "antdamage1",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "leafcutter",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "antdamage2",
+        "w": 2400,
+        "h": 1800
+    },
+    {
+        "name": "croc",
+        "w": 1577,
+        "h": 1213
+    },
+    {
+        "name": "howler",
+        "w": 1690,
+        "h": 1802
+    },
+    {
+        "name": "capuchin",
+        "w": 2400,
+        "h": 2505
+    },
+    {
+        "name": "riverdolphin",
+        "w": 2246,
+        "h": 2816
+    },
+    {
+        "name": "caiman",
+        "w": 1356,
+        "h": 1744
+    },
+    {
+        "name": "birds",
+        "w": 2400,
+        "h": 1849
+    },
+    {
+        "name": "turtle",
+        "w": 1505,
+        "h": 1133
+    },
+    {
+        "name": "sloth",
+        "w": 935,
+        "h": 911
+    },
+    {
+        "name": "lapaz3",
+        "w": 2400,
+        "h": 1600
+    },
+    {
+        "name": "lapaz2",
+        "w": 1437,
+        "h": 2598
+    }
+]
