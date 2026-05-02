@@ -39,7 +39,7 @@ gallery:
   - sloth
 ---
 
-In late 2023, I spent a few days in the Ecuadorian Amazon while attending a friend's wedding in Loja — a lodge, some hikes, a packraft paddle on Rio Nangaritza. I found the forest magnificent and the bugs manageable. Two years later, when planning a solo trip through Latin America, going deeper into the Amazon felt like the natural next step.
+In 2023 I spent a few days in the Ecuadorian Amazon. I found the bugs manageable. Two years later I decided to go deeper. 
 
 ## Preparation
 
@@ -49,15 +49,15 @@ I spent a while choosing a location. I wanted somewhere with pristine, untouched
 
 <img src="/adventures/amazon-2025/thumb/gear.webp" class="float-right" alt="Gear laid out before departure" />
 
-I wasn't ready to go fully unsupported. After contacting several local outfitters — most refused outright — I reached an arrangement: a single guide would accompany me for the first day and a half, by car, motorized pirogue, and then on foot through the jungle to the headwaters of the Río Eslabon. From there I would be on my own for up to five days, paddling down the Eslabon, Tuichi, and Beni rivers back toward civilization. I would check in daily via satellite messenger, and a guide would be on call to come get me if needed. My itinerary had been vetted as realistic.
+I wasn't ready to go fully unsupported. After contacting several local outfitters (most refused outright), I reached an arrangement: a single guide would accompany me for the first day and a half, by car, motorized pirogue, and then on foot through the jungle to Río Eslabon. From there I would be on my own for up to five days, paddling down the Eslabon, Tuichi, and Beni rivers back toward civilization. I would check in daily via satellite messenger, and a guide would be on call to come get me if needed, though this might take a couple of days. My itinerary had been vetted as realistic.
 
-A few days before departure, I was in La Paz — perhaps the most astonishing city I have ever visited, climbing steeply from 3,600 to over 4,000 meters. I spent the days hunting for last-minute gear: a local machete, a small belt knife, permethrin for my clothing (unavailable anywhere in Bolivia, to my frustration), and lyophilized food that would keep in the humidity — harder to find than expected. Then I dropped nearly 4,000 meters in altitude to the jungle town of Rurrenabaque.
+A few days before departure, I was in La Paz. Perhaps the most astonishing city I have ever visited, climbing steeply from 3,600 to over 4,000 meters, buzzing with relentless activity at an altitude where breathing is hard. I spent the days hunting for last-minute gear: a local machete, a small belt knife, permethrin for my clothing (unavailable anywhere in Bolivia, to my frustration), and lyophilized food that would keep in the humidity, including some dried Llama. Then I dropped nearly 4,000 meters in altitude to the jungle town of Rurrenabaque.
 
 ## Approach
 
 <img src="/adventures/amazon-2025/thumb/rearguardandmachete.webp" class="float-left" alt="Two guides on the trail" />
 
-Things didn't go to plan from the start. The rainy season had arrived three weeks early. The road to the original put-in was flooded, and my designated guide — stranded on the wrong side of a washed-out dirt road — could no longer reach Rurrenabaque. Replacements were found: three of them. An experienced older guide with a bad leg who couldn't walk through the forest (let's call him Gramps), a muscular and short-tempered local who slashed through the undergrowth at a sprint (Machete), and a perpetually trailing fourth member of the party (Rearguard). We took a longer detour by motorized pirogue to avoid the flooded road.
+The rainy season had arrived three weeks early. The road to the original put-in was flooded, and my designated guide was stranded on the wrong side of a washed-out dirt road, so he could no longer reach me in Rurrenabaque. Replacements were found: three of them. An experienced older guide with a bad leg who couldn't walk through the forest (let's call him Gramps), a muscular and short-tempered local who slashed through the undergrowth at a sprint (Machete), and a perpetually trailing fourth member of the party (Rearguard). We took a longer detour by motorized pirogue to avoid the flooded road.
 
 <img src="/adventures/amazon-2025/thumb/hike.webp" class="float-right" alt="Cutting through the forest" />
 
@@ -75,19 +75,19 @@ Near the equator, night falls around six. Mosquito rush hour was already in full
 
 *What a night in the jungle sounds like. Recorded from inside the hammock. The eerie, wind-like wailing in the background at 0:25 and 0:44 is almost certainly a distant howler monkey.*
 
-I woke at one in the morning when the tree broke in half. I landed on the forest floor in complete darkness, arms over my head instinctively, but the tree fell away from me. The hammock still had me fully enclosed. I decided I couldn't fall any lower, and went back to sleep on the ground.
+I woke at one in the morning when the tree broke in half. I landed on the forest floor in complete darkness, arms over my head instinctively, but the tree fell away from me. The hammock still had me fully enclosed. I figured I was still enclosed in the hammock and couldn't fall any lower, and went back to sleep on the forest floor.
 
-At half past one, an odd tickling sensation — and bites. I was covered in ants. When the tree fell, they had found their way up the hammock cord and in through a small eyelet in the fabric. I killed every ant I could find, blocked the eyelets with sticks, and slept again. At four-thirty, a lightning storm. The hammock, no longer sheltered by the tarp, was getting wet. Damn it.
+At half past one, an odd tickling sensation — and bites. I was covered in ants. When the tree fell, they had found their way up the hammock cord and in through a small eyelet in the fabric. I killed every ant I could find, blocked the eyelets with thin sticks, and slept again. At four-thirty, a lightning storm. The hammock, no longer sheltered by the tarp, was getting wet. Damn it.
 
 ## Paddling the Eslabon
 
-The first day on the river was magical. The first few kilometres were actually on a tiny tributary of the Eslabon — the narrowest water I had ever paddled, barely wider than the raft in places. It felt like being truly at the heart of the forest, closer to it than any trail could have put me. On several river bends, enormous birds launched themselves from the branches overhead. The water was completely opaque, and every splash from the shallows set the imagination going: caiman, snake, fish. Probably turtles.
+The first few kilometres were on a tiny, narrow tributary of the Eslabon, often only a couple of meters across. This felt like trespassing through the heart of the forest. On several river bends, large birds launched themselves from the branches overhead. The water was completely opaque, and every splash from the shallows set the imagination going: caiman, snake, fish. Probably turtles.
 
 <img src="/adventures/amazon-2025/thumb/eslabon2.webp" class="float-left" alt="The Eslabon river" />
 
 Over the course of the day the river widened, the forest opened slightly, and navigation became easier. At two points I rounded a corner to find capybara herds on the bank. Both times they watched from the water's edge with mild wariness, then held their ground.
 
-I disembarked that evening on a stony bank and made camp a little way inside the forest, set up the hammock correctly this time, and ate a reasonable meal despite the insects — mosquitoes, sandflies, bees (drawn to sweat and prone to getting trapped in clothing), wasps, ants, termites, spiders, cockroaches, grasshoppers, flies. I fell asleep feeling, for the first time, that I was finding my footing in this environment.
+I disembarked that evening on a stony bank and made camp a little way inside the forest, set up the hammock correctly this time, and ate a reasonable meal despite the insects swarming me: mosquitoes, sandflies, bees (drawn to sweat and prone to getting trapped in clothing), wasps, ants, termites, spiders, cockroaches, grasshoppers, flies. I fell asleep in the hammock, shielded from the bugs, comfortable and confident.
 
 <video controls style="width:100%;max-width:640px;border-radius:4px;margin:1.5em 0;display:block">
   <source src="/adventures/amazon-2025/paddling_web.mp4" type="video/mp4">
@@ -99,9 +99,9 @@ I disembarked that evening on a stony bank and made camp a little way inside the
 
 <img src="/adventures/amazon-2025/thumb/antdamage1.webp" class="float-right" alt="Packraft with 40 holes from leafcutter ants" />
 
-The following morning I found forty holes in my packraft. Leafcutter ants had worked through the night. I knew they were a danger to tent fabric, but a packraft is roughly a hundred times more robust — I hadn't considered them a threat. It was a problem. I was still fifteen kilometers from the Tuichi, the larger river where a motorboat could reach me. Hiking out through the jungle was possible but much harder than floating.
+The following morning I found forty holes in my packraft. Leafcutter ants had worked through the night. I knew they were a danger to tent fabric, but a packraft is roughly a hundred times more robust. I hadn't considered them a threat. I was still fifteen kilometers from the Tuichi, the larger river where a motorboat could reach me; hiking out through the jungle was possible but much harder and slower than floating.
 
-I spent two hours patching. The boat was still losing air. I got in anyway, immediately capsized, climbed back in, and adopted a strategy: paddle for a minute or two as the boat slowly deflated, then pump it back up from the inside with an extension tube, repeat. Over twenty-five kilometers. It was exhausting, and I knew the strategy had a hard limit: capsizing on the Tuichi — a hundred meters wide — or the Beni beyond it was a genuine safety risk, the kind that could mean losing equipment or worse. I was hoping to intercept a motorized pirogue.
+I spent two hours patching. The boat was still losing air. I got in anyway, immediately capsized, climbed back in, and adopted a strategy: paddle for a minute or two as the boat slowly deflated, then pump it back up from the inside with an extension tube, repeat. Over twenty-five kilometers. It was exhausting, and I knew the strategy had a hard limit: capsizing on the lower parts of the Tuichi, or the Beni beyond it was a genuine safety risk. Those rivers get to about 500 meters wide and their currents are powerful. I was hoping to intercept a motorized pirogue before that.
 
 ## Out
 
@@ -109,8 +109,6 @@ About ten kilometers into the Tuichi, a boat appeared. I waved. I explained, in 
 
 <img src="/adventures/amazon-2025/thumb/croc.webp" class="float-left" alt="Caiman on the riverbank" />
 
-In total the trip lasted three days instead of the planned six and a half — partly because of the hurried handoff from the guides, partly because the high water made river travel unexpectedly fast. Despite reading like a catalogue of mishaps, I had a genuinely wonderful time. Floating alone through the jungle, listening to howler monkeys, watching the birds flush at each bend, surrounded by more life per square meter than anywhere I have ever been — it was something else. Crucially, I reached the part I most wanted to see: the deep Eslabon, far from any human being. And despite everything, I still had a decent safety margin throughout. I hadn't been pushed to my limit, and knowing that felt as good as anything.
-
 I'll go back, eventually, and stay longer.
 
-After the trip I spent a couple of days on a short group tour of the rivers downstream — calmer water, a boat, a local guide who knew where to look. All the animal photographs in the gallery — caiman, dolphin, monkey, sloth, birds — are from that stretch.
+After the trip I spent a couple of days on a short group tour of the rivers downstream: calmer water, a boat, a local guide who knew where to look. All the animal photographs at the end of the gallery (caiman, dolphin, monkey, sloth, birds) are from that stretch.
