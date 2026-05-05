@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import PageLayout from '../../layouts/PageLayout.astro';
+import PageLayout from '../../../layouts/PageLayout.astro';
 
 const projects = (await getCollection('projects')).sort(
 	(a, b) => a.data.order - b.data.order
@@ -21,7 +21,7 @@ const statusLabel: Record<string, string> = {
 
 	<div class="project-grid">
 		{projects.map((project) => (
-			<a href={`/projects/${project.id}`} class="project-card">
+			<a href={`/science-tech/projects/${project.id}`} class="project-card">
 				<div class="card-top">
 					<span class={`status-badge status-${project.data.status}`}>
 						{statusLabel[project.data.status]}

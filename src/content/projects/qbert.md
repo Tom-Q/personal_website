@@ -3,6 +3,7 @@ title: "Atari ACC Model"
 summary: "A computational model of the anterior cingulate cortex, developed during a postdoc in Clay Holroyd's lab at Ghent University. ACC modules trained on top of a deep RL agent playing Q-bert learn to track and represent the agent's internal state — demonstrating that a separate observer module can recover structured, abstract representations of a complex neural system in action."
 tags: ["python", "deep learning", "reinforcement learning", "neuroscience", "on hold"]
 status: "on-hold"
+category: "research"
 order: 3
 ---
 

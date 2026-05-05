@@ -1,0 +1,49 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+	title="Galleries — Thomas R. Colin"
+	description="Photo galleries from shorter trips and alpine seasons."
+	bodyClass="theme-outdoors"
+>
+	<div class="page-header">
+		<a href="/outdoors" class="back-link">← Outdoors</a>
+		<h1>Galleries</h1>
+		<p class="lead">Shorter trips and photo collections.</p>
+	</div>
+
+	<p class="coming-soon">Coming soon — Chardonnet 2025, alpine seasons, Pyrénées 2022, and more.</p>
+</PageLayout>
+
+<style>
+	.page-header {
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5em;
+		padding-bottom: 1em;
+	}
+	.back-link {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		text-decoration: none;
+		display: inline-block;
+		margin-bottom: 0.4em;
+	}
+	.back-link:hover {
+		color: var(--accent);
+	}
+	.page-header h1 {
+		font-size: 2.2em;
+		margin: 0 0 0.4em;
+	}
+	.lead {
+		color: rgb(var(--gray));
+		font-size: 1em;
+		margin: 0;
+	}
+	.coming-soon {
+		color: rgb(var(--gray));
+		font-style: italic;
+		font-size: 0.95em;
+	}
+</style>

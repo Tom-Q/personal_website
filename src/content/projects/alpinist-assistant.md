@@ -3,6 +3,7 @@ title: "Mountaineering Preparation Assistant"
 summary: "A conversational AI assistant for technical mountaineering preparation — route research, conditions, weather, and avalanche forecasts, grounded in real data sources."
 tags: ["python", "AI", "LLM", "RAG", "mountaineering", "active"]
 status: "active"
+category: "personal"
 order: 3
 ---
 

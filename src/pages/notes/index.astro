@@ -1,0 +1,38 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+	title="Notes — Thomas R. Colin"
+	description="Writing on outdoors, books, and ideas."
+	bodyClass=""
+>
+	<div class="page-header">
+		<h1>Notes</h1>
+		<p class="lead">Outdoors philosophy, book recommendations, and other writing.</p>
+	</div>
+
+	<p class="coming-soon">Coming soon.</p>
+</PageLayout>
+
+<style>
+	.page-header {
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5em;
+		padding-bottom: 1em;
+	}
+	.page-header h1 {
+		font-size: 2.2em;
+		margin: 0 0 0.4em;
+	}
+	.lead {
+		color: rgb(var(--gray));
+		font-size: 1em;
+		margin: 0;
+	}
+	.coming-soon {
+		color: rgb(var(--gray));
+		font-style: italic;
+		font-size: 0.95em;
+	}
+</style>

@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import AdventureLayout from '../../layouts/AdventureLayout.astro';
+import AdventureLayout from '../../../layouts/AdventureLayout.astro';
 
 export async function getStaticPaths() {
 	const adventures = await getCollection('adventures');

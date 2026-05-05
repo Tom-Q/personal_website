@@ -1,13 +1,11 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
-import adventuresImg from '../../assets/adventures.jpg';
-import mountainImg   from '../../assets/mountaineering.JPG';
-import hikingImg     from '../../assets/hiking.jpg';
-import cyclingImg    from '../../assets/cycling.jpg';
-import packraftImg   from '../../assets/packrafting.jpg';
-import climbImg      from '../../assets/climbing.jpg';
-import sailingImg    from '../../assets/sailing.jpg';
+
+const adventures = (await getCollection('adventures')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 
 <PageLayout
@@ -17,152 +15,42 @@ import sailingImg    from '../../assets/sailing.jpg';
 >
 	<div class="page-header">
 		<h1>Outdoors</h1>
-		<p class="lead">
-			Being outside — in the mountains, on rivers, on a bike, or on foot — is a central part of
-			my life. Here's an overview of what I do and where I've been.
-		</p>
+		<p class="lead">Mountains, rivers, oceans, and wild places.</p>
 	</div>
 
-	<div class="content">
-
-		<div class="section-row">
-			<section class="section-text">
-				<h2>Adventures</h2>
-				<p>
-					Some trips stand apart and deserve their own pages. Some of these were "extreme" ... to me. What 
-					makes something a true adventure is not its inherent difficulty, but the way it pushes at my limits
-					and engages me wholly. My trips to Patagonia, Norway, and the Bolivian Amazon were personal challenges
-					that transformed me. True adventures, isolated in remote wildernesses, where decision-making is critical.
-
-					Other trips, like the Dent du Géant, the Atlantic crossing, or even my short climbing holiday in the
-					Calanques, were remarkable in other ways: social challenges, otherworldly natural beauty...
-				</p>
-				<ul>
-					<li><a href="/adventures/patagonia-2024">Patagonia 2024</a></li>
-					<li>Dent du Géant 2024 <span class="soon">(coming soon)</span></li>
-					<li>Écrins 2024 <span class="soon">(coming soon)</span></li>
-					<li><a href="/adventures/norway-2025">Norway 2025</a></li>
-					<li><a href="/adventures/atlantic-2025">Atlantic crossing 2025</a></li>
-					<li>Patagonia 2025 <span class="soon">(coming soon)</span></li>
-					<li><a href="/adventures/amazon-2025">Bolivian Amazon 2025</a></li>
-					<li>Calanques 2026 <span class="soon">(coming soon)</span></li>
-				</ul>
-			</section>
-			<div class="section-photo">
-				<Image src={adventuresImg} alt="Adventures" width={300} height={400} />
-			</div>
+	<section class="section">
+		<h2 class="section-heading">Adventures</h2>
+		<div class="card-grid">
+			{adventures.map((adventure) => (
+				<a href={`/outdoors/adventures/${adventure.id}`} class="adventure-card">
+					<div class="card-img">
+						<Image src={adventure.data.heroImage} alt="" width={400} height={260} />
+					</div>
+					<div class="card-info">
+						<div class="card-meta">
+							{adventure.data.location} &middot; {adventure.data.date.getFullYear()}
+						</div>
+						<h3>{adventure.data.title}</h3>
+						<p>{adventure.data.summary}</p>
+					</div>
+				</a>
+			))}
+			<a href="/outdoors/cv" class="cv-card">
+				<div class="cv-card-inner">
+					<div class="cv-icon">⛰</div>
+					<h3>Outdoors CV</h3>
+					<p>Route log, certifications, and technical training. Useful if you're looking for an alpine partner.</p>
+				</div>
+			</a>
 		</div>
+	</section>
 
-		<hr />
+	<hr />
 
-		<div class="section-row">
-			<section class="section-text">
-				<h2>Mountaineering</h2>
-				<p>
-					I really got into climbing mountains around 2022. Since then I've "bagged" a few summits.
-					But it's not about making it to the top! It's about having a good time with my friends, 
-					making memories, meeting risks but staying safe, moving with purpose, body
-					and mind fully engaged. It's all rather useless, but it's as beautiful as life gets.
-				</p>
-				<p>
-					I keep a full log of routes and certifications/training on the
-					<a href="/outdoors/climbing">mountaineering page</a>.
-				</p>
-			</section>
-			<div class="section-photo">
-				<Image src={mountainImg} alt="Mountaineering" width={300} height={400} />
-			</div>
-		</div>
-
-		<hr />
-
-		<div class="section-row">
-			<section class="section-text">
-				<h2>Climbing</h2>
-				<p>
-					I've been climbing rocks my entire life. I'm not that good at it: I'm still trying to
-					get into the 7 range (I think I can redpoint 7a outdoors but I haven't found the right project,
-					and the sandbagged Belgium cliffs aren't helping).
-					Doesn't change how much I enjoy it! Instead of getting good, I've been learning every climbing-related
-					discipline: bouldering, lead, multipitch, trad, ice climbing...
-				</p>
-			</section>
-			<div class="section-photo">
-				<Image src={climbImg} alt="climbing" width={300} height={400} />
-			</div>
-		</div>
-
-		<hr />
-
-		<div class="section-row">
-			<section class="section-text">
-				<h2>Hiking and running</h2>
-				<p>
-					It's essential prep for expeditions! I run or hike 2-3 times a week.
-				</p>
-			</section>
-			<div class="section-photo">
-				<Image src={hikingImg} alt="Hiking" width={300} height={400} />
-			</div>
-		</div>
-
-		<hr />
-
-		<div class="section-row">
-			<section class="section-text">
-				<h2>Cycling</h2>
-				<p>
-					I've bikepacked in Quebec, Cornwall, around the Alps
-					and Pyrénées, in Chilean Patagonia and in Chiloe.
-				</p>
-			</section>
-			<div class="section-photo">
-				<Image src={cyclingImg} alt="Cycling" width={300} height={400} />
-			</div>
-		</div>
-
-		<hr />
-
-		<div class="section-row">
-			<section class="section-text">
-				<h2>Packrafting</h2>
-				<p>
-					Packrafting combines hiking and light inflatable rafting. A packraft weighs roughly
-					2–4 kg and packs down small enough to carry in a very large backpack, alongside a dry suit for cold water,
-					a Personal Floatation Device (PFD; =life jacket), a helmet, paddle, and a bunch of accessories.
-					In the end it's a lot of stuff to lug around. But it makes it possible to cross
-					rivers, lakes, and fjords that would otherwise be impassable, enabling access to some of the most isolated
-					regions on earth. And for as long as you're gliding on the water, all that stuff is weightless. 
-				</p>
-				<p>
-					I've used packrafts in Patagonia, Norway, and in the Amazon rainforest; and in many smaller trips in
-					France and Belgium.
-				</p>
-			</section>
-			<div class="section-photo">
-				<Image src={packraftImg} alt="Packrafting" width={300} height={400} />
-			</div>
-		</div>
-
-		<hr />
-
-		<div class="section-row">
-			<section class="section-text">
-				<h2>Sailing</h2>
-				<p>
-					I haven't done much sailing: I used to go on those tiny "optimiste" boats on holidays as a child.
-					For my 2025 trip in Latin America I wanted to avoid taking the plane for climate reasons, so I joined
-					the "trainees"/passengers of a tall ship, the Morgenster. It was challenging! I think mountaineering is
-					more my thing, but this was still a beautiful adventure and I hope I'll get back to sailing on smaller
-					ships eventually.
-				</p>
-			</section>
-			<div class="section-photo">
-				<Image src={sailingImg} alt="Sailing" width={300} height={400} />
-			</div>
-		</div>
-
-	</div>
+	<section class="section">
+		<h2 class="section-heading">Galleries</h2>
+		<p class="coming-soon">Coming soon — shorter trips and photo collections.</p>
+	</section>
 </PageLayout>
 
 <style>
@@ -179,62 +67,127 @@ import sailingImg    from '../../assets/sailing.jpg';
 		color: rgb(var(--gray));
 		font-size: 1em;
 		margin: 0;
-		max-width: 600px;
 	}
-
-	.section-row {
-		display: grid;
-		grid-template-columns: 1fr 240px;
-		gap: 2.5em;
-		align-items: start;
-		margin-bottom: 0.5em;
+	.section {
+		margin-bottom: 2.5em;
 	}
-	.section-text h2 {
-		font-size: 1.4em;
-		margin-bottom: 0.6em;
-	}
-	.section-text p {
-		font-size: 0.95em;
-		line-height: 1.75;
-		color: rgb(var(--gray-dark));
-	}
-	.section-text ul {
-		padding-left: 1.25em;
-		margin: 0.25em 0 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.35em;
-	}
-	.section-text li {
-		font-size: 0.95em;
-	}
-	.soon {
-		color: rgb(var(--gray));
+	.section-heading {
 		font-size: 0.85em;
-	}
-	.section-photo img {
-		width: 100%;
-		height: 320px;
-		object-fit: cover;
-		border-radius: 6px;
-		display: block;
-	}
-	.solo-section {
-		max-width: 620px;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: rgb(var(--gray));
+		margin-bottom: 1.25em;
 	}
 	hr {
-		margin: 2em 0;
+		margin: 0 0 2.5em;
 	}
 
-	@media (max-width: 680px) {
-		.section-row {
+	/* Shared card grid */
+	.card-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25em;
+	}
+
+	/* Adventure cards */
+	.adventure-card {
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		text-decoration: none;
+		color: inherit;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		overflow: hidden;
+		background: white;
+		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+	.adventure-card:hover {
+		border-color: var(--accent);
+		box-shadow: var(--box-shadow);
+	}
+	.card-img img {
+		width: 100%;
+		height: 180px;
+		object-fit: cover;
+		display: block;
+	}
+	.card-info {
+		padding: 1.25em 1.5em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.card-meta {
+		font-size: 0.78em;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.4em;
+	}
+	.card-info h3 {
+		font-size: 1.15em;
+		margin: 0 0 0.4em;
+	}
+	.card-info p {
+		color: rgb(var(--gray));
+		font-size: 0.88em;
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	/* Outdoors CV card */
+	.cv-card {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		background: white;
+		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+	.cv-card:hover {
+		border-color: var(--accent);
+		box-shadow: var(--box-shadow);
+	}
+	.cv-card-inner {
+		padding: 1.5em;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4em;
+	}
+	.cv-icon {
+		font-size: 1.5em;
+		line-height: 1;
+		margin-bottom: 0.2em;
+	}
+	.cv-card h3 {
+		font-size: 1.15em;
+		margin: 0;
+	}
+	.cv-card p {
+		color: rgb(var(--gray));
+		font-size: 0.88em;
+		margin: 0;
+		line-height: 1.6;
+		max-width: 520px;
+	}
+
+	.coming-soon {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		font-style: italic;
+		margin: 0;
+	}
+
+	@media (max-width: 640px) {
+		.adventure-card {
 			grid-template-columns: 1fr;
 		}
-		.section-photo {
-			order: -1;
+		.card-img img {
+			height: 200px;
 		}
-		.section-photo img {
-			height: 220px;
+		.card-info {
+			padding: 1.25em;
 		}
 	}
 </style>

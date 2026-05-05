@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import PageLayout from '../../layouts/PageLayout.astro';
+import PageLayout from '../../../layouts/PageLayout.astro';
 
 const adventures = (await getCollection('adventures')).sort(
 	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -18,7 +18,7 @@ const adventures = (await getCollection('adventures')).sort(
 		{
 			adventures.map((adventure) => (
 				<li>
-					<a href={`/adventures/${adventure.id}`} class="adventure-card">
+					<a href={`/outdoors/adventures/${adventure.id}`} class="adventure-card">
 						<div class="adventure-img">
 							<Image
 								src={adventure.data.heroImage}

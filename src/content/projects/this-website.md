@@ -3,6 +3,7 @@ title: "This Website"
 summary: "A personal website built with Astro — part portfolio, part photo album, part project log."
 tags: ["astro", "web", "mdx", "active"]
 status: "active"
+category: "personal"
 order: 2
 ---
 

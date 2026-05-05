@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import PageLayout from '../../layouts/PageLayout.astro';
+import PageLayout from '../../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
 	const projects = await getCollection('projects');
@@ -26,7 +26,7 @@ const statusLabel: Record<string, string> = {
 	bodyClass="theme-projects"
 >
 	<div class="project-header">
-		<a href="/projects" class="back-link">← All projects</a>
+		<a href="/science-tech" class="back-link">← Science & Tech</a>
 		<div class="meta">
 			<span class={`status-badge status-${project.data.status}`}>
 				{statusLabel[project.data.status]}

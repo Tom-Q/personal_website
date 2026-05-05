@@ -3,6 +3,7 @@ title: "Modeling Cognitive Control: RNNs and Representational Similarity Analysi
 summary: "A published computational neuroscience study using RSA to compare how recurrent neural networks and the human anterior cingulate cortex represent hierarchically structured task sequences. Networks with explicit goal units better account for the representational geometry of human ACC."
 tags: ["python", "neuroscience", "fMRI", "deep learning", "data analysis", "RSA"]
 status: "complete"
+category: "research"
 order: 2
 ---
 
