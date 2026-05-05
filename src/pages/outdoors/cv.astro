@@ -1,58 +1,104 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 
-const routes = [
-	{ date: 'Jan 2024', route: '[Route — placeholder]', area: 'Patagonia, Chile',   role: 'Shared leading', grade: 'D',   notes: 'First Patagonia expedition' },
-	{ date: 'Jul 2024', route: 'Dent du Géant, via normale', area: 'Mont Blanc massif', role: 'Guided',         grade: 'AD+', notes: '4013m' },
-	{ date: '2025',     route: '[Route — placeholder]',      area: 'Norway',           role: 'Shared leading', grade: 'TD',  notes: '' },
-	{ date: '2025',     route: '[Route — placeholder]',      area: 'Patagonia, Chile', role: 'Shared leading', grade: 'ED-', notes: 'Second Patagonia expedition' },
-	{ date: '2026',     route: '[Route — placeholder]',      area: 'Calanques',        role: 'Leader',         grade: '6a',  notes: 'Day climbing' },
+const alpinism = [
+	{ date: '2026', route: 'Ice climbing, 5 days (led WI3)', area: 'Écrins', grade: 'WI3+', role: 'Leader (partial)', notes: 'Ice · 4 days guided' },
+	{ date: '2025', route: 'Giobernay VN · Tour du glacier de la Pilatte · Pic Coolidge', area: 'Écrins', grade: 'F–PD', role: 'Leader', notes: '' },
+	{ date: '2025', route: 'Chapelle de la Glière arête S (6a) · Frison-Roche (6a) · Arête Forbes · Pointe Lachenal voie Contamine (6a+)', area: 'Chamonix', grade: 'AD–6a+', role: 'Shared lead', notes: '' },
+	{ date: '2025', route: 'Aiguille Dibona: Éthique de la Joie (5c) · Visite Obligatoire (6b)', area: 'Écrins', grade: '5c–6b', role: 'Shared lead', notes: '' },
+	{ date: '2025', route: 'Perrons de Vallorcine (AD) · Aiguille du Génépi: Mort de Rire (6a) · Bettembourg de droite (5c) · Cocher-Cochon (6a)', area: 'Chamonix', grade: 'AD-TD/5c–6a', role: 'Shared lead', notes: 'Rassemblement alpinistes belges' },
+	{ date: '2025', route: 'Traversée des Crochues · Traversée Pointes Lachenal + arête à Lolo · Traversée des Perrons de Vallorcine', area: 'Chamonix', grade: 'PD–AD', role: 'Leader', notes: 'CAB Initiateur Alpinisme' },
+	{ date: '2025', route: 'Ice climbing & skimo', area: 'Val Pellice', grade: 'WI3', role: 'Guided', notes: 'Ice' },
+	{ date: '2024', route: 'Cascade du Lac Vert, 110m', area: 'Pyrénées', grade: 'WI4+', role: 'Guided, second', notes: 'Ice' },
+	{ date: '2024', route: 'Cordillera Esmeralda', area: 'Patagonie chilienne', grade: 'AD', role: 'Guided, second', notes: '' },
+	{ date: '2024', route: 'Aiguille Pierre Alain · Dent du Géant, depuis Montenvers', area: 'Chamonix', grade: 'AD+', role: 'Leader', notes: '' },
+	{ date: '2024', route: "Aiguille de l'M, arête NNE", area: 'Chamonix', grade: 'D', role: 'Leader', notes: 'Trad' },
+	{ date: '2024', route: 'Traversée des Crochues', area: 'Chamonix', grade: 'PD', role: 'Leader', notes: '' },
+	{ date: '2024', route: 'Petite Fourche, face S-E', area: 'Chamonix', grade: 'PD', role: 'Leader', notes: '' },
+	{ date: '2024', route: 'Traversée des Marbrées · Traversée des Aiguilles d\'Entrèves · Pyramide du Tacul', area: 'Chamonix', grade: 'PD–AD', role: 'Guided', notes: 'CAB Alpinisme Autonomie' },
+	{ date: '2023', route: 'Aiguille du Tour, voie normale', area: 'Chamonix', grade: 'PD', role: 'Leader', notes: '' },
+	{ date: '2023', route: 'Aiguille de la Glière · La Somone au Brévent', area: 'Chamonix', grade: 'F', role: 'Guided', notes: 'UCPA Alpinisme Évolution 2' },
+	{ date: '2023', route: 'Pic de Château Renard, arête W (winter)', area: 'Queyras', grade: 'F', role: 'Solo', notes: '' },
+	{ date: '2014', route: 'Illiniza Norte · Ruminahui · Pasochoa', area: 'Ecuador', grade: 'F', role: 'Guided', notes: 'Volcanic peaks' },
+	{ date: '2002', route: 'Pierra Menta', area: 'Beaufortain', grade: '4–5', role: 'Guided, second', notes: 'Multipitch rock' },
+];
+
+const bikepacking = [
+	{ date: '2025', description: 'Chilean Patagonia — Carretera Austral & Chiloé' },
+	{ date: '2022', description: 'Pyrénées — bikepacking & hiking, Doigt de la Brèche' },
+	{ date: '2021', description: 'France–Italy–Switzerland — 1,600km, Valence to Geneva, Alps crossings, detours via Marseille, Genoa, and the Aosta valley' },
+	{ date: '2019', description: 'Quebec — 700km, St Lawrence / Saguenay / Lac-Saint-Jean' },
+];
+
+const adventures = [
+	{ date: '2025', description: 'Bolivia, Parque Madidi — solo packrafting in the Amazon rainforest' },
+	{ date: '2025', description: 'Chilean Patagonia — packrafting & hiking expedition' },
+	{ date: '2025', description: 'Norway — hiking & packrafting' },
+	{ date: '2025', description: 'Atlantic Ocean sailing crossing' },
+	{ date: '2024', description: 'Chilean Patagonia — bikepacking, packrafting & hiking expedition' },
 ];
 
 const training = [
-	'[Placeholder] — Lead climbing course, [Year]',
-	'[Placeholder] — Avalanche safety (AIARE / equivalent), [Year]',
-	'[Placeholder] — Crevasse rescue, [Year]',
-	'[Placeholder] — Wilderness first aid, [Year]',
+	{ date: '2026', item: "CAB — Animateur Structure Naturelle d'Escalade (Anim SNE)" },
+	{ date: '2025', item: 'CAB — Initiateur Alpinisme' },
+	{ date: '2025', item: 'Avalanche rescue training — Val Pellice' },
+	{ date: '2024', item: 'CAB — Alpinisme Autonomie' },
+	{ date: '2023', item: 'UCPA — Alpinisme Évolution 2' },
+	{ date: '2023', item: 'CAB (Club Alpin Belge) — Escalade en tête en falaise' },
+	{ date: '2023', item: 'Snow & ice initiation — Chamonix Guides' },
+	{ date: '1997–2000', item: 'Indoor climbing courses' },
 ];
 ---
 
 <PageLayout
-	title="Mountaineering — Thomas R. Colin"
-	description="Mountaineering route log, grades, and training record."
+	title="Outdoors CV — Thomas R. Colin"
+	description="Alpinism route log, expeditions, and training record."
 	bodyClass="theme-outdoors"
 >
 	<div class="page-header">
-		<div>
-			<a href="/outdoors" class="back-link">← Outdoors</a>
-			<h1>Mountaineering</h1>
-		</div>
+		<a href="/outdoors" class="back-link">← Outdoors</a>
+		<h1>Outdoors CV</h1>
 	</div>
 
-	<!-- Full route log -->
+	<section class="training">
+		<h2 class="section-label">Training & qualifications</h2>
+		<ul class="dated-list">
+			{
+				training.map((t) => (
+					<li>
+						<span class="item-date">{t.date}</span>
+						<span>{t.item}</span>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<hr />
+
 	<section class="route-log">
-		<h2 class="section-label">Route log</h2>
+		<h2 class="section-label">Alpinism</h2>
 		<div class="table-wrapper">
 			<table>
 				<thead>
 					<tr>
 						<th>Date</th>
-						<th>Route</th>
+						<th>Route / Objective</th>
 						<th>Area</th>
-						<th>Role</th>
 						<th>Grade</th>
+						<th>Role</th>
 						<th>Notes</th>
 					</tr>
 				</thead>
 				<tbody>
 					{
-						routes.map((r) => (
+						alpinism.map((r) => (
 							<tr>
 								<td class="date-cell">{r.date}</td>
 								<td>{r.route}</td>
-								<td>{r.area}</td>
-								<td>{r.role}</td>
+								<td class="area-cell">{r.area}</td>
 								<td class="grade-cell">{r.grade}</td>
+								<td class="role-cell">{r.role}</td>
 								<td class="notes-cell">{r.notes}</td>
 							</tr>
 						))
@@ -61,17 +107,71 @@ const training = [
 			</table>
 		</div>
 		<p class="table-note">
-			Alpine grades: F · PD · AD · D · TD · ED. Rock grades: French numerical.
+			Alpine grades: F · PD · AD · D · TD · ED. Rock: French numerical. Ice: WI scale.
 		</p>
 	</section>
 
 	<hr />
 
-	<!-- Training -->
-	<section class="training">
-		<h2 class="section-label">Training & courses</h2>
-		<ul class="training-list">
-			{training.map((item) => <li>{item}</li>)}
+	<section class="rock">
+		<h2 class="section-label">Climbing</h2>
+		<ul class="dated-list">
+			<li>
+				<span class="item-date">2026</span>
+				<span>Calanques — La Promesse des Profondeurs (6b, 6 pitches), Prends-moi sec (5c), and others. Shared lead.</span>
+			</li>
+			<li>
+				<span class="item-date">2023–now</span>
+				<span>Belgian massifs — Freyr, Grands-Malades, Durnal, Aiguilles de Chaleux, Yvoir, and others. Sport climbing and multipitch.</span>
+			</li>
+			<li>
+				<span class="item-date">1995–now</span>
+				<span>Fontainebleau — occasional bouldering and sport climbing.</span>
+			</li>
+		</ul>
+	</section>
+
+	<hr />
+
+	<section class="adventures">
+		<h2 class="section-label">Adventures & expeditions</h2>
+		<ul class="dated-list">
+			{
+				adventures.map((a) => (
+					<li>
+						<span class="item-date">{a.date}</span>
+						<span>{a.description}</span>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<hr />
+
+	<section class="bikepacking">
+		<h2 class="section-label">Bikepacking</h2>
+		<ul class="dated-list">
+			{
+				bikepacking.map((b) => (
+					<li>
+						<span class="item-date">{b.date}</span>
+						<span>{b.description}</span>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<hr />
+
+	<section class="running">
+		<h2 class="section-label">Running</h2>
+		<ul class="dated-list">
+			<li>
+				<span class="item-date">2021–now</span>
+				<span>Road and trail running, approximately one half-marathon per year.</span>
+			</li>
 		</ul>
 	</section>
 </PageLayout>
@@ -107,65 +207,47 @@ const training = [
 		margin: 2.5em 0;
 	}
 
-	/* Featured routes */
-	.featured {
-		margin-bottom: 2.5em;
-	}
-	.featured-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.25em;
-	}
-	.route-card {
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 8px;
-		overflow: hidden;
-		background: white;
-	}
-	.route-img img {
-		width: 100%;
-		height: 180px;
-		object-fit: cover;
-		border-radius: 0;
-		display: block;
-	}
-	.route-info {
-		padding: 1em;
-	}
-	.route-meta {
-		font-size: 0.75em;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: rgb(var(--gray));
-		margin-bottom: 0.4em;
-	}
-	.route-info h3 {
-		font-size: 0.95em;
-		margin: 0 0 0.5em;
-	}
-	.route-link {
-		font-size: 0.85em;
-		color: var(--accent);
-		text-decoration: none;
-	}
-	.route-link:hover {
-		color: var(--accent-dark);
-	}
-
 	/* Route table */
 	.table-wrapper {
 		overflow-x: auto;
 	}
 	table {
-		font-size: 0.9em;
+		font-size: 0.88em;
+		width: 100%;
+		border-collapse: collapse;
+	}
+	th {
+		text-align: left;
+		font-weight: 600;
+		padding: 0.4em 0.75em 0.6em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+		white-space: nowrap;
+	}
+	td {
+		padding: 0.45em 0.75em 0.45em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		vertical-align: top;
+	}
+	tbody tr:last-child td {
+		border-bottom: none;
 	}
 	.date-cell {
 		white-space: nowrap;
 		color: rgb(var(--gray));
+		width: 3.5em;
+	}
+	.area-cell {
+		color: rgb(var(--gray-dark));
+		white-space: nowrap;
 	}
 	.grade-cell {
 		font-weight: 700;
 		white-space: nowrap;
+	}
+	.role-cell {
+		white-space: nowrap;
+		color: rgb(var(--gray-dark));
 	}
 	.notes-cell {
 		color: rgb(var(--gray));
@@ -177,20 +259,32 @@ const training = [
 		margin-top: 0.75em;
 	}
 
-	/* Training */
-	.training-list {
-		padding-left: 1.25em;
+	/* Dated lists */
+	.dated-list {
+		list-style: none;
+		padding: 0;
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5em;
-		font-size: 0.95em;
-		color: rgb(var(--gray-dark));
+		gap: 0.6em;
+		font-size: 0.93em;
+	}
+	.dated-list li {
+		display: flex;
+		gap: 1.25em;
+	}
+	.item-date {
+		color: rgb(var(--gray));
+		white-space: nowrap;
+		min-width: 4.5em;
+		padding-top: 0.02em;
 	}
 
-	@media (max-width: 640px) {
-		.featured-grid {
-			grid-template-columns: 1fr;
-		}
+	/* Prose notes */
+	.prose-note {
+		font-size: 0.93em;
+		color: rgb(var(--gray-dark));
+		line-height: 1.7;
+		max-width: 640px;
 	}
 </style>

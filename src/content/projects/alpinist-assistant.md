@@ -7,7 +7,7 @@ category: "personal"
 order: 3
 ---
 
-Technical mountaineering involves a lot of online preparation work: finding good routes, checking hut availability, reading conditions reports, cross-referencing topos from multiple sources. A bare LLM isn't capable of this — it has no access to the relevant information, and high-level mountaineering knowledge is largely tacit and rarely written down in a form that ends up in training data.
+Technical mountaineering involves a lot of online prep: finding good routes, checking hut availability, reading conditions reports, looking up the weather (both the forecast and the last few days), cross-referencing topos from multiple sources.
 
 This app is a conversational assistant built on Claude (via the Anthropic API), empowered by a set of tools that give it structured access to the information that actually matters.
 
@@ -15,11 +15,11 @@ This app is a conversational assistant built on Claude (via the Anthropic API), 
 
 ## Why an LLM isn't enough on its own
 
-Even with tool access, the LLM needs to be constrained in what judgments it makes. The failure modes of LLMs on mountaineering questions are predictable:
+Without tools, an LLM simply doesn't have access to the right information. We solve this with a database of scraped data and access to various services via APIs (meteofrance, camptocamp, etc.). Even with tool access, the LLM needs to be constrained in what judgments it makes. The failure modes of LLMs on mountaineering questions are predictable:
 
 - They treat nominal grades as ground truth. An AD in poor late-season shape can be more committing than a TD in perfect conditions. A 150m route graded TD+ due to one 6b move is incomparable to 1000m of sustained difficulties at AD where the hardest move is 4.
 - They can't read between the lines of conditions reports.
-- They don't know what they don't know — and in an alpine context, confident-sounding wrong advice has real consequences.
+- They don't know what they don't know; and they hallucinate plausible answers. In an alpine context, confident-sounding wrong advice has real consequences.
 
 ## Tools
 
@@ -27,13 +27,13 @@ Even with tool access, the LLM needs to be constrained in what judgments it make
 - **Avalanche forecasts** — Météo-France BRA for French massifs; EAWS CAAMLv6 feeds for Switzerland, Italy, and Austria, via public API
 - **Weather** — Open-Meteo: 7-day forecast, recent snowfall history, seasonal snow accumulation, re-freeze altitude; calibrated to snow-season windows per mountain range
 - **RAG on route databases** — SummitPost (~2,300 mountaineering routes worldwide), SAC (Swiss Alpine Club, 800 routes); semantic search with geographic filtering via ChromaDB and a multilingual sentence-transformer model
-- **Domain knowledge** — mountain range bounding boxes, French massif polygons, grade system encodings (French rock, UIAA, WI, M-grades, alpine commitment), snow season windows per range
+- **Domain knowledge** — worldwide mountain range bounding boxes, French massif polygons, grade system encodings (French rock, UIAA, WI, M-grades, alpine commitment), snow season windows per range, two mountaineering manuals for technical info, hut information scraped from refuges.info.
 
 ## Stack
 
 - **App:** Python, [Streamlit](https://streamlit.io)
 - **LLM:** Claude via Anthropic API (Sonnet for chat)
-- **Route data:** Camptocamp API; SummitPost and SAC (scraped, stored in SQLite)
+- **Route and report data:** Camptocamp API; SummitPost, SAC, hikr, and a few personal websites from guides and amateurs (scraped, stored in SQLite)
 - **RAG:** [ChromaDB](https://www.trychroma.com) + [sentence-transformers](https://www.sbert.net) (`paraphrase-multilingual-mpnet-base-v2`)
 - **Weather:** [Open-Meteo](https://open-meteo.com)
 - **Avalanche:** Météo-France BRA, EAWS CAAMLv6

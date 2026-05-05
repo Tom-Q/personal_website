@@ -62,7 +62,7 @@ Each file = one project page. Frontmatter fields:
 - `title` (string)
 - `summary` (string — shown on the projects overview grid)
 - `tags` (array, e.g. ["python", "AI", "academic"])
-- `status` (string — "active" | "complete" | "academic")
+- `status` (string — "active" | "complete" | "on hold")
 - `order` (number — controls display order on the grid)
 
 ---

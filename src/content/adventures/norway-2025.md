@@ -1,7 +1,7 @@
 ---
 title: "Norway 2025"
 date: 2025-08-27
-location: "Norway"
+location: "Saltfjellet-Svartisen National Park, Norway"
 heroImage: "../../assets/austerdalsvatnet.jpg"
 summary: "7 days solo adventure by the arctic circle."
 tags: ["expedition", "norway", "packrafting"]
