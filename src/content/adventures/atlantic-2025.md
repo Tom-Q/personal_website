@@ -3,7 +3,7 @@ title: "Atlantic Crossing"
 date: 2025-09-22
 location: "Tenerife to Fernando de Noronha"
 heroImage: "../../assets/atlantic2025_sails.jpg"
-summary: "Five weeks at sea aboard the Morgenster, a 48-metre tall ship, from Tenerife to Fernando de Noronha in Brazil."
+summary: "3 weeks at sea aboard the Morgenster."
 tags: ["expedition", "sailing", "atlantic", "brazil"]
 gallery:
   - bryc

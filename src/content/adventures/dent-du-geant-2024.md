@@ -3,7 +3,7 @@ title: "Dent du Géant"
 date: 2024-07-25
 location: "Mont Blanc massif, Chamonix"
 heroImage: "../../assets/dg2024_hero.jpg"
-summary: "Four days with Coline and Cis: from the Mer de Glace to a first 4000m, and a lesson about bergschrunds."
+summary: "4 days to the summit, starting from the Montenvers Mer de Glace station."
 tags: ["alpinism", "chamonix", "montblanc", "4000m"]
 gallery:
   - merdeglace

@@ -1,9 +1,9 @@
 ---
-title: "Patagonia 2024"
+title: "Patagonia"
 date: 2024-01-15
 location: "Aysén, Chilean Patagonia"
 heroImage: "../../assets/patagonia2024_tent.jpg"
-summary: "My first expedition: solo hiking and packrafting in Aysen, Chilean Patagonia."
+summary: "My first expedition."
 tags: ["packrafting", "expedition", "patagonia"]
 gallery:
   - bike

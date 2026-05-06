@@ -1,9 +1,9 @@
 ---
-title: "Bolivian Amazon 2025"
+title: "Bolivian Amazon"
 date: 2025-12-06
 location: "Parque Nacional Madidi, Bolivia"
 heroImage: "../../assets/amazon_hero.jpg"
-summary: "Six days solo packrafting through Parque Nacional Madidi in the Bolivian Amazon — river tunnels through the jungle, capybaras at dawn, and a raft eaten by leafcutter ants."
+summary: "60km through the Amazon rainforest, with thousands of bugs for company."
 tags: ["amazon", "bolivia", "rainforest", "packrafting", "solo"]
 gallery:
   - lapaz3

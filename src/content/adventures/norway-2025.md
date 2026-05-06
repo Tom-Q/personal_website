@@ -1,9 +1,9 @@
 ---
-title: "Norway 2025"
+title: "Nordland"
 date: 2025-08-27
 location: "Saltfjellet-Svartisen National Park, Norway"
 heroImage: "../../assets/austerdalsvatnet.jpg"
-summary: "7 days solo adventure by the arctic circle."
+summary: "Crossing the arctic circle by foot and packraft."
 tags: ["expedition", "norway", "packrafting"]
 gallery:
   - storglomvatnet
