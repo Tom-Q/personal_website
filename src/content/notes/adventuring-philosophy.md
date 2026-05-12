@@ -1,6 +1,6 @@
 ---
 title: "Ethics of Adventure"
-summary: "Personal reflections."
+summary: "Thoughts on the justifications for adventure."
 ---
 
 Nobody wants to die trying to look cool for an instagram post... Yet some people do. I'd rather not be one of them. I think it's important to know what actually motivates me, deep down, and whether it's something I want to nurture or to restrain.

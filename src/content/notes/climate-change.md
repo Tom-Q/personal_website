@@ -1,6 +1,6 @@
 ---
 title: "Climate Change and Adventure Tourism"
-summary: "What a traveler sees, and why staying silent about it would be worse."
+summary: "Visible effects of climate change."
 heroImage: "../../assets/climate_hero.jpg"
 gallery:
   - glacierdutour
