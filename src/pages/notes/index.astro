@@ -1,5 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
+
+const notes = await getCollection('notes');
 ---
 
 <PageLayout
@@ -12,7 +15,16 @@ import PageLayout from '../../layouts/PageLayout.astro';
 		<p class="lead">Outdoors philosophy, book recommendations, and other writing.</p>
 	</div>
 
-	<p class="coming-soon">Coming soon.</p>
+	<ul class="note-list">
+		{notes.map((note) => (
+			<li>
+				<a href={`/notes/${note.id}`} class="note-card">
+					<h2>{note.data.title}</h2>
+					<p>{note.data.summary}</p>
+				</a>
+			</li>
+		))}
+	</ul>
 </PageLayout>
 
 <style>
@@ -30,9 +42,34 @@ import PageLayout from '../../layouts/PageLayout.astro';
 		font-size: 1em;
 		margin: 0;
 	}
-	.coming-soon {
+	.note-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+	.note-card {
+		display: block;
+		padding: 1.25em 1.5em;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 6px;
+		text-decoration: none;
+		color: inherit;
+		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+	.note-card:hover {
+		border-color: var(--accent);
+		box-shadow: var(--box-shadow);
+	}
+	.note-card h2 {
+		font-size: 1.15em;
+		margin: 0 0 0.3em;
+	}
+	.note-card p {
 		color: rgb(var(--gray));
-		font-style: italic;
-		font-size: 0.95em;
+		font-size: 0.9em;
+		margin: 0;
 	}
 </style>

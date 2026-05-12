@@ -2,25 +2,26 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 
 const alpinism = [
-	{ date: '2026', route: 'Ice climbing, 5 days (led WI3)', area: 'Écrins', grade: 'WI3+', role: 'Leader (partial)', notes: 'Ice · 4 days guided' },
-	{ date: '2025', route: 'Giobernay VN · Tour du glacier de la Pilatte · Pic Coolidge', area: 'Écrins', grade: 'F–PD', role: 'Leader', notes: '' },
-	{ date: '2025', route: 'Chapelle de la Glière arête S (6a) · Frison-Roche (6a) · Arête Forbes · Pointe Lachenal voie Contamine (6a+)', area: 'Chamonix', grade: 'AD–6a+', role: 'Shared lead', notes: '' },
+	{ date: '2026', route: 'Ice climbing, 5 days (led WI3)', area: 'Écrins', grade: 'WI3+', role: 'Shared lead', notes: 'Ice · 4 days with a guide, 1 day without' },
+	{ date: '2025', route: 'Mont Giobernay VN · Tour du glacier de la Pilatte · Pic Coolidge', area: 'Écrins', grade: 'F–PD', role: 'Leader', notes: '' },
+	{ date: '2025', route: 'Aiguille du Chardonnet, arête Forbes', area: 'Chamonix', grade: 'AD+', role: 'Shared lead', notes: 'Late season, very icy conditions' },
+	{ date: '2025', route: 'Chapelle de la Glière arête S (6a) · Frison-Roche (6a) · Pointe Lachenal voie Contamine (6a+)', area: 'Chamonix', grade: 'AD–6a+', role: 'Shared lead', notes: '' },
 	{ date: '2025', route: 'Aiguille Dibona: Éthique de la Joie (5c) · Visite Obligatoire (6b)', area: 'Écrins', grade: '5c–6b', role: 'Shared lead', notes: '' },
 	{ date: '2025', route: 'Perrons de Vallorcine (AD) · Aiguille du Génépi: Mort de Rire (6a) · Bettembourg de droite (5c) · Cocher-Cochon (6a)', area: 'Chamonix', grade: 'AD-TD/5c–6a', role: 'Shared lead', notes: 'Rassemblement alpinistes belges' },
-	{ date: '2025', route: 'Traversée des Crochues · Traversée Pointes Lachenal + arête à Lolo · Traversée des Perrons de Vallorcine', area: 'Chamonix', grade: 'PD–AD', role: 'Leader', notes: 'CAB Initiateur Alpinisme' },
+	{ date: '2025', route: 'Traversée des Crochues · Traversée Pointes Lachenal + arête à Lolo · Traversée des Perrons de Vallorcine', area: 'Chamonix', grade: 'PD–AD', role: 'Guided', notes: 'CAB Initiateur Alpinisme' },
 	{ date: '2025', route: 'Ice climbing & skimo', area: 'Val Pellice', grade: 'WI3', role: 'Guided', notes: 'Ice' },
-	{ date: '2024', route: 'Cascade du Lac Vert, 110m', area: 'Pyrénées', grade: 'WI4+', role: 'Guided, second', notes: 'Ice' },
-	{ date: '2024', route: 'Cordillera Esmeralda', area: 'Patagonie chilienne', grade: 'AD', role: 'Guided, second', notes: '' },
-	{ date: '2024', route: 'Aiguille Pierre Alain · Dent du Géant, depuis Montenvers', area: 'Chamonix', grade: 'AD+', role: 'Leader', notes: '' },
+	{ date: '2024', route: 'Cascade du Lac Vert, 110m', area: 'Pyrénées', grade: 'WI4+', role: 'Guided', notes: 'Ice' },
+	{ date: '2024', route: 'Cordillera Esmeralda', area: 'Patagonie chilienne', grade: 'AD', role: 'Guided', notes: '' },
+	{ date: '2024', route: 'Aiguille Pierre Alain · Dent du Géant, depuis Montenvers', area: 'Chamonix', grade: 'AD+', role: 'Shared lead', notes: '' },
 	{ date: '2024', route: "Aiguille de l'M, arête NNE", area: 'Chamonix', grade: 'D', role: 'Leader', notes: 'Trad' },
 	{ date: '2024', route: 'Traversée des Crochues', area: 'Chamonix', grade: 'PD', role: 'Leader', notes: '' },
-	{ date: '2024', route: 'Petite Fourche, face S-E', area: 'Chamonix', grade: 'PD', role: 'Leader', notes: '' },
-	{ date: '2024', route: 'Traversée des Marbrées · Traversée des Aiguilles d\'Entrèves · Pyramide du Tacul', area: 'Chamonix', grade: 'PD–AD', role: 'Guided', notes: 'CAB Alpinisme Autonomie' },
+	{ date: '2024', route: 'Petite Fourche, couloir S-E', area: 'Chamonix', grade: 'PD', role: 'Leader', notes: '' },
+	{ date: '2024', route: "Traversée des Marbrées · Traversée des Aiguilles d'Entrèves · Pyramide du Tacul", area: 'Chamonix', grade: 'PD–AD', role: 'Guided', notes: 'CAB Alpinisme Autonomie' },
 	{ date: '2023', route: 'Aiguille du Tour, voie normale', area: 'Chamonix', grade: 'PD', role: 'Leader', notes: '' },
 	{ date: '2023', route: 'Aiguille de la Glière · La Somone au Brévent', area: 'Chamonix', grade: 'F', role: 'Guided', notes: 'UCPA Alpinisme Évolution 2' },
 	{ date: '2023', route: 'Pic de Château Renard, arête W (winter)', area: 'Queyras', grade: 'F', role: 'Solo', notes: '' },
 	{ date: '2014', route: 'Illiniza Norte · Ruminahui · Pasochoa', area: 'Ecuador', grade: 'F', role: 'Guided', notes: 'Volcanic peaks' },
-	{ date: '2002', route: 'Pierra Menta', area: 'Beaufortain', grade: '4–5', role: 'Guided, second', notes: 'Multipitch rock' },
+	{ date: '2002', route: 'Pierra Menta', area: 'Beaufortain', grade: '4–5', role: 'Guided', notes: 'Multipitch rock' },
 ];
 
 const bikepacking = [
@@ -39,13 +40,22 @@ const adventures = [
 ];
 
 const training = [
-	{ date: '2026', item: "CAB — Animateur Structure Naturelle d'Escalade (Anim SNE)" },
-	{ date: '2025', item: 'CAB — Initiateur Alpinisme' },
-	{ date: '2025', item: 'Avalanche rescue training — Val Pellice' },
-	{ date: '2024', item: 'CAB — Alpinisme Autonomie' },
-	{ date: '2023', item: 'UCPA — Alpinisme Évolution 2' },
-	{ date: '2023', item: 'CAB (Club Alpin Belge) — Escalade en tête en falaise' },
-	{ date: '2023', item: 'Snow & ice initiation — Chamonix Guides' },
+	{
+		date: '2026',
+		item: "CAB — Animateur Structure Naturelle d'Escalade (Anim SNE) · 6 days · ongoing",
+		desc: "Technical component of the formation towards becoming a certified outdoor climbing instructor.",
+	},
+	{
+		date: '2025',
+		item: 'CAB — Initiateur Alpinisme · 10 days · validation week pending',
+		desc: 'Enables guiding beginner alpinists, as a volunteer, on easy outings within the CAB structure.',
+	},
+	{ date: '2025', item: 'Avalanche rescue training · 1 day' },
+	{ date: '2024', item: 'CAB — Alpinisme Autonomie · 5 days · alpinism technique course' },
+	{ date: '2023', item: 'UCPA — Alpinisme Évolution 2 · 5 days · alpinism technique course' },
+	{ date: '2023', item: 'CAB — Escalade en tête en falaise · 4 days' },
+	{ date: '2023', item: 'Snow & ice initiation — Chamonix Guides · 1 day' },
+	{ date: '', item: 'Other one- and two-day courses: trad climbing, rappel secu montagne, cold management weekend' },
 	{ date: '1997–2000', item: 'Indoor climbing courses' },
 ];
 ---
@@ -67,7 +77,10 @@ const training = [
 				training.map((t) => (
 					<li>
 						<span class="item-date">{t.date}</span>
-						<span>{t.item}</span>
+						<span>
+							{t.item}
+							{t.desc && <span class="item-desc">{t.desc}</span>}
+						</span>
 					</li>
 				))
 			}
@@ -118,7 +131,7 @@ const training = [
 		<ul class="dated-list">
 			<li>
 				<span class="item-date">2026</span>
-				<span>Calanques — La Promesse des Profondeurs (6b, 6 pitches), Prends-moi sec (5c), and others. Shared lead.</span>
+				<span>Calanques — La Promesse des Profondeurs (6b), Prends-moi sec (5c), and others. Shared lead.</span>
 			</li>
 			<li>
 				<span class="item-date">2023–now</span>
@@ -126,7 +139,7 @@ const training = [
 			</li>
 			<li>
 				<span class="item-date">1995–now</span>
-				<span>Fontainebleau — occasional bouldering and sport climbing.</span>
+				<span>Fontainebleau — occasional bouldering and sport climbing. And occasional outings elsewhere, bouldering or sport climbing.</span>
 			</li>
 		</ul>
 	</section>
@@ -278,6 +291,13 @@ const training = [
 		white-space: nowrap;
 		min-width: 4.5em;
 		padding-top: 0.02em;
+	}
+	.item-desc {
+		display: block;
+		color: rgb(var(--gray));
+		font-size: 0.88em;
+		margin-top: 0.25em;
+		line-height: 1.5;
 	}
 
 	/* Prose notes */

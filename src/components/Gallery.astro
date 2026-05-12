@@ -5,13 +5,15 @@ import { join } from 'path';
 interface Props {
 	slug: string;
 	images: string[];
+	basePath?: string;
+	captions?: Record<string, string>;
 }
-const { slug, images } = Astro.props;
+const { slug, images, basePath = 'adventures', captions = {} } = Astro.props;
 
 type ManifestEntry = { name: string; w: number; h: number };
 let dims: Record<string, ManifestEntry> = {};
 try {
-	const raw = readFileSync(join('public', 'adventures', slug, 'manifest.json'), 'utf8');
+	const raw = readFileSync(join('public', basePath, slug, 'manifest.json'), 'utf8');
 	const arr: ManifestEntry[] = JSON.parse(raw);
 	dims = Object.fromEntries(arr.map((e) => [e.name, e]));
 } catch {
@@ -24,13 +26,14 @@ try {
 	<div class="gallery" id="gallery">
 		{images.map((name) => (
 			<a
-				href={`/adventures/${slug}/full/${name}.webp`}
+				href={`/${basePath}/${slug}/full/${name}.webp`}
 				class="gallery-item"
 				data-pswp-width={dims[name]?.w}
 				data-pswp-height={dims[name]?.h}
+				data-pswp-caption={captions[name]}
 			>
 				<img
-					src={`/adventures/${slug}/thumb/${name}.webp`}
+					src={`/${basePath}/${slug}/thumb/${name}.webp`}
 					alt={name.replace(/-/g, ' ')}
 					loading="lazy"
 				/>
@@ -48,6 +51,23 @@ try {
 		children: 'a',
 		pswpModule: () => import('photoswipe'),
 	});
+
+	lightbox.on('uiRegister', () => {
+		lightbox.pswp.ui.registerElement({
+			name: 'caption',
+			order: 9,
+			isButton: false,
+			appendTo: 'root',
+			onInit(el, pswp) {
+				pswp.on('change', () => {
+					const caption = pswp.currSlide?.data?.element?.dataset?.pswpCaption;
+					el.innerHTML = caption || '';
+					el.style.display = caption ? '' : 'none';
+				});
+			},
+		});
+	});
+
 	lightbox.init();
 </script>
 
@@ -89,5 +109,17 @@ try {
 		.gallery {
 			grid-template-columns: repeat(2, 1fr);
 		}
+	}
+	:global(.pswp__caption) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 0.6em 1.2em;
+		background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+		color: #fff;
+		font-size: 0.82em;
+		text-align: center;
+		pointer-events: none;
 	}
 </style>
