@@ -59,7 +59,7 @@ The Morgenster (Dutch for "morning star") is a tall ship: two masts, 48 metres l
 
 <img src="/adventures/atlantic-2025/thumb/tenerife_inline.webp" alt="Tenerife" class="inline-image float-right" />
 
-I made my way to Tenerife by bus, train, and ferry, and had three days on the island before the ship departed. I had been before and knew it would be good. What makes Tenerife special is the variety: depending on altitude and which side of the island you're on, the landscape and climate change completely, from arid volcanic desert to lush cloud forest. Those were my last days on land for a while.
+I made my way to Tenerife by bus, train, and ferry, and had three days on the island before the ship departed. What makes Tenerife special is the variety: depending on altitude and which side of the island you're on, the landscape and climate change completely, from arid volcanic desert to lush cloud forest. Those were my last days on land for a while.
 
 ## The first week
 

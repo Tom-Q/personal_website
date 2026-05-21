@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Gallery from '../components/Gallery.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	date: Date;
+	location: string;
+	heroImage: ImageMetadata;
+	heroPosition?: string;
+	summary: string;
+	gallery?: string[];
+	slug: string;
+}
+
+const { title, location, heroImage, heroPosition = 'center 40%', summary, gallery = [], slug } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} — Thomas R. Colin`} description={summary} image={heroImage} />
+		<style>
+			.hero {
+				position: relative;
+				height: 70vh;
+				min-height: 400px;
+				overflow: hidden;
+				background: #111;
+			}
+			.hero-bg {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: var(--hero-position, center 40%);
+				z-index: 0;
+			}
+			.hero-content {
+				position: relative;
+				z-index: 1;
+				height: 100%;
+				background: linear-gradient(
+					to bottom,
+					rgba(0, 0, 0, 0.0) 40%,
+					rgba(0, 0, 0, 0.55) 100%
+				);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				padding: 3em;
+				color: white;
+			}
+			.hero-meta {
+				font-size: 0.85em;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				opacity: 0.8;
+				margin-bottom: 0.5em;
+			}
+			.hero-content h1 {
+				color: white;
+				font-size: 2.8em;
+				margin: 0;
+				line-height: 1.1;
+			}
+			.intro {
+				max-width: 640px;
+				margin: 0 auto;
+				padding: 2.5em 1em 1em;
+			}
+			.intro a.back-link {
+				display: inline-block;
+				margin-bottom: 1.5em;
+				font-size: 0.9em;
+				color: rgb(var(--gray));
+				text-decoration: none;
+			}
+			.intro a.back-link:hover {
+				color: var(--accent);
+			}
+			.intro p {
+				color: rgb(var(--gray-dark));
+				font-size: 0.95em;
+				line-height: 1.75;
+				margin: 0;
+				text-align: justify;
+				hyphens: auto;
+			}
+			@media (max-width: 720px) {
+				.hero-content {
+					padding: 2em 1.25em;
+				}
+				.hero-content h1 {
+					font-size: 2em;
+				}
+			}
+		</style>
+	</head>
+	<body class="theme-outdoors">
+		<Header />
+		<div class="hero" style={`--hero-position: ${heroPosition}`}>
+			<Image class="hero-bg" src={heroImage} alt="" />
+			<div class="hero-content">
+				<div class="hero-meta">{location}</div>
+				<h1>{title}</h1>
+			</div>
+		</div>
+		<div class="intro">
+			<a href="/outdoors/galleries" class="back-link">← Galleries</a>
+			<slot />
+		</div>
+		{gallery.length > 0 && <Gallery slug={slug} images={gallery} basePath="galleries" />}
+		<Footer />
+	</body>
+</html>

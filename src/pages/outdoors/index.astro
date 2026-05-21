@@ -6,6 +6,9 @@ import PageLayout from '../../layouts/PageLayout.astro';
 const adventures = (await getCollection('adventures')).sort(
 	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+const galleries = (await getCollection('galleries')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 
 <PageLayout
@@ -15,11 +18,11 @@ const adventures = (await getCollection('adventures')).sort(
 >
 	<div class="page-header">
 		<h1>Outdoors</h1>
-		<p class="lead">Mountains, rivers, oceans, and wild places.</p>
 	</div>
 
 	<section class="section">
 		<h2 class="section-heading">Adventures</h2>
+		<p class="section-intro">In my view, a trip is an adventure not because it is extreme, but because it is a jump into the unknown. About half the trips below ended in retreat: I came across difficulties beyond my abilities, or dangers I was not willing to chance, so I turned around.</p>
 		<div class="card-grid">
 			{adventures.map((adventure) => (
 				<a href={`/outdoors/adventures/${adventure.id}`} class="adventure-card">
@@ -49,7 +52,18 @@ const adventures = (await getCollection('adventures')).sort(
 
 	<section class="section">
 		<h2 class="section-heading">Galleries</h2>
-		<p class="coming-soon">Coming soon — shorter trips and photo collections.</p>
+		<p class="section-intro" style="margin-bottom: 1.25em;">Photos from other trips.</p>
+		<div class="gallery-grid">
+			{galleries.map((g) => (
+				<a href={`/outdoors/galleries/${g.id}`} class="gallery-card">
+					<Image src={g.data.heroImage} alt="" width={600} height={400} />
+					<div class="gallery-overlay">
+						<h3>{g.data.title}</h3>
+						<p>{g.data.location}</p>
+					</div>
+				</a>
+			))}
+		</div>
 	</section>
 </PageLayout>
 
@@ -80,6 +94,14 @@ const adventures = (await getCollection('adventures')).sort(
 	}
 	hr {
 		margin: 0 0 2.5em;
+	}
+
+	.section-intro {
+		color: rgb(var(--gray));
+		font-size: 0.92em;
+		line-height: 1.7;
+		margin: 0 0 1.5em;
+		text-align: justify;
 	}
 
 	/* Shared card grid */
@@ -172,11 +194,53 @@ const adventures = (await getCollection('adventures')).sort(
 		max-width: 520px;
 	}
 
-	.coming-soon {
-		color: rgb(var(--gray));
-		font-size: 0.9em;
-		font-style: italic;
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+	}
+	.gallery-card {
+		position: relative;
+		display: block;
+		aspect-ratio: 3 / 2;
+		overflow: hidden;
+		border-radius: 4px;
+		text-decoration: none;
+		color: white;
+		background: #111;
+	}
+	.gallery-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: opacity 0.2s, transform 0.3s;
+	}
+	.gallery-card:hover img {
+		opacity: 0.85;
+		transform: scale(1.03);
+	}
+	.gallery-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding: 1em;
+	}
+	.gallery-overlay h3 {
+		font-size: 1.05em;
+		margin: 0 0 0.2em;
+		color: white;
+	}
+	.gallery-overlay p {
+		font-size: 0.75em;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		opacity: 0.8;
 		margin: 0;
+		color: white;
 	}
 
 	@media (max-width: 640px) {

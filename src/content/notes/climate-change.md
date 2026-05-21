@@ -38,7 +38,7 @@ captions:
 
 When I was growing up, travel was simply cool and people didn't worry much about personal footprint. Climate change was a societal problem, not something for individuals. The contradiction between caring about the environment and getting on a plane existed but wasn't visceral: you didn't *see* the damage by traveling. If anything, going to wild places felt like being on the right side: you were the one who appreciated nature, not the one destroying it.
 
-That has changed. The damage has now scaled up to the point where, if you travel to mountains, glaciers, or remote forests, it is impossible to miss. Lots of people walk past without recognizing that they're seeing a recent and dramatic transformation.
+That has changed. The damage has now scaled up to the point where it is, sadly, spectacular in its magnitude. Yet lots of people walk past without recognizing that they're seeing a recent and dramatic transformation.
 
 Traveling in the 2020s, especially across oceans, feels hypocritical. Flying is unsustainable and I know it. I've tried to mitigate: some trips were for conferences, one was aboard a sailing ship; I've never owned a car and have cut my beef consumption drastically; I try to be politically active. But I'm not going to claim this makes me blameless. Some people have simply chosen never to fly, and they are doing better than me.
 

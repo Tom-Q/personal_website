@@ -1,5 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import PageLayout from '../../../layouts/PageLayout.astro';
+
+const galleries = (await getCollection('galleries')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 
 <PageLayout
@@ -13,7 +19,17 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 		<p class="lead">Shorter trips and photo collections.</p>
 	</div>
 
-	<p class="coming-soon">Coming soon — Chardonnet 2025, alpine seasons, Pyrénées 2022, and more.</p>
+	<div class="gallery-grid">
+		{galleries.map((g) => (
+			<a href={`/outdoors/galleries/${g.id}`} class="gallery-card">
+				<Image src={g.data.heroImage} alt="" width={600} height={400} />
+				<div class="card-overlay">
+					<h2>{g.data.title}</h2>
+					<p>{g.data.location}</p>
+				</div>
+			</a>
+		))}
+	</div>
 </PageLayout>
 
 <style>
@@ -29,9 +45,7 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 		display: inline-block;
 		margin-bottom: 0.4em;
 	}
-	.back-link:hover {
-		color: var(--accent);
-	}
+	.back-link:hover { color: var(--accent); }
 	.page-header h1 {
 		font-size: 2.2em;
 		margin: 0 0 0.4em;
@@ -41,9 +55,64 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 		font-size: 1em;
 		margin: 0;
 	}
-	.coming-soon {
-		color: rgb(var(--gray));
-		font-style: italic;
-		font-size: 0.95em;
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+	}
+	.gallery-card {
+		position: relative;
+		display: block;
+		aspect-ratio: 3 / 2;
+		overflow: hidden;
+		border-radius: 4px;
+		text-decoration: none;
+		color: white;
+		background: #111;
+	}
+	.gallery-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: opacity 0.2s, transform 0.3s;
+	}
+	.gallery-card:hover img {
+		opacity: 0.85;
+		transform: scale(1.03);
+	}
+	.card-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding: 1em;
+	}
+	.card-overlay h2 {
+		font-size: 1.05em;
+		margin: 0 0 0.2em;
+		color: white;
+		line-height: 1.2;
+	}
+	.card-overlay p {
+		font-size: 0.75em;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		opacity: 0.8;
+		margin: 0;
+	}
+
+	@media (max-width: 720px) {
+		.gallery-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (max-width: 480px) {
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

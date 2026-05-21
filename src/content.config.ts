@@ -43,4 +43,18 @@ const notes = defineCollection({
 		}),
 });
 
-export const collections = { adventures, projects, notes };
+const galleries = defineCollection({
+	loader: glob({ base: './src/content/galleries', pattern: '**/*.{md,mdx}' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			date: z.coerce.date(),
+			location: z.string(),
+			heroImage: image(),
+			heroPosition: z.string().default('center 40%'),
+			summary: z.string(),
+			gallery: z.array(z.string()).default([]),
+		}),
+});
+
+export const collections = { adventures, projects, notes, galleries };

@@ -85,7 +85,7 @@ The first few kilometres were on a tiny, narrow tributary of the Eslabon, often 
 
 <img src="/adventures/amazon-2025/thumb/eslabon2.webp" class="float-left" alt="The Eslabon river" />
 
-Over the course of the day the river widened, the forest opened slightly, and navigation became easier. At two points I rounded a corner to find capybara herds on the bank. Both times they watched from the water's edge with mild wariness, then held their ground.
+Over the course of the day the river widened, the forest opened slightly, and navigation became easier. At two points I rounded a corner to find capybara herds on the bank. Both times they watched warily from the water's edge, and held their ground. They're a lot bigger than I expected.
 
 I disembarked that evening on a stony bank and made camp a little way inside the forest, set up the hammock correctly this time, and ate a reasonable meal despite the insects swarming me: mosquitoes, sandflies, bees (drawn to sweat and prone to getting trapped in clothing), wasps, ants, termites, spiders, cockroaches, grasshoppers, flies. I fell asleep in the hammock, shielded from the bugs, comfortable and confident.
 
