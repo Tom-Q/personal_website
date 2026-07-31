@@ -2,6 +2,9 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 
 const alpinism = [
+	{ date: '2026', route: "Rateau (épaule sur l'arête sud) · Arête des lèves tard · Dôme de la Lauze", area: 'Écrins', grade: 'PD', role: 'Shared lead', notes: 'Shared lead with a mountain guide while co-supervising a CAB mountaineering course' },
+	{ date: '2026', route: 'Mont Blanc from the Durier Hut via the Bionassay traverse', area: 'Chamonix', grade: 'AD', role: 'Shared lead', notes: 'No summit: turned back at 4,600m due to altitude sickness' },
+	{ date: '2026', route: 'Aiguille de la République, voie normale', area: 'Chamonix', grade: 'D', role: 'Shared lead', notes: 'No summit: turned back short of the top when our pace fell too far behind schedule' },
 	{ date: '2026', route: 'Ice climbing, 5 days (led WI3)', area: 'Écrins', grade: 'WI3+', role: 'Shared lead', notes: 'Ice · 4 days with a guide, 1 day without' },
 	{ date: '2025', route: 'Mont Giobernay VN · Tour du glacier de la Pilatte · Pic Coolidge', area: 'Écrins', grade: 'F–PD', role: 'Leader', notes: '' },
 	{ date: '2025', route: 'Aiguille du Chardonnet, arête Forbes', area: 'Chamonix', grade: 'AD+', role: 'Shared lead', notes: 'Late season, very icy conditions' },
@@ -41,17 +44,17 @@ const adventures = [
 ];
 
 const training = [
+	{
+		date: '2025-2026',
+		item: 'CAB — Initiateur Alpinisme · 15 days',
+		desc: 'Enables guiding beginner alpinists, as a volunteer, within the CAB structure. 5 days theory in Belgium, 5 days practice with an ENSA instructor in Chamonix, 5 days supervising participants on a real CAB alpinism course.',
+	},
 	{ date: '2026', item: 'LUAK — Top Rope Solo and Lead Rope Solo · 2 days' },
 	{ date: '2026', item: 'Hike2River — Intermediate whitewater packraft course · 3 days · Mekong Packraft Festival' },
 	{
 		date: '2026',
 		item: "CAB — Animateur Structure Naturelle d'Escalade (Anim SNE) · 6 days",
 		desc: "Technical component of the formation towards becoming a certified outdoor climbing instructor.",
-	},
-	{
-		date: '2025',
-		item: 'CAB — Initiateur Alpinisme · 10 days · validation week pending',
-		desc: 'Enables guiding beginner alpinists, as a volunteer, on easy outings within the CAB structure.',
 	},
 	{ date: '2025', item: 'Avalanche rescue training · 1 day' },
 	{ date: '2024', item: 'CAB — Alpinisme Autonomie · 5 days · alpinism technique course' },
@@ -292,7 +295,7 @@ const training = [
 	.item-date {
 		color: rgb(var(--gray));
 		white-space: nowrap;
-		min-width: 4.5em;
+		min-width: 6.5em;
 		padding-top: 0.02em;
 	}
 	.item-desc {

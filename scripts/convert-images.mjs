@@ -1,9 +1,11 @@
 /**
- * Usage: node scripts/convert-images.mjs <raw-folder> <adventure-slug>
+ * Usage: node scripts/convert-images.mjs <raw-folder> <slug> [base-dir]
  * Example: node scripts/convert-images.mjs patagonia2024 patagonia-2024
+ * Example: node scripts/convert-images.mjs "mountaineering 2026" mountaineering-2026 galleries
  *
  * Reads JPG/PNG from raw_photos/<raw-folder>/
- * Writes WebP thumbs (800px) and full-size (2400px) to public/adventures/<slug>/
+ * Writes WebP thumbs (800px) and full-size (2400px) to public/<base-dir>/<slug>/
+ * base-dir defaults to "adventures"; use "galleries" for gallery-collection entries.
  * Writes manifest.json with image dimensions (used by the Gallery component).
  * Strips any "<raw-folder>_" prefix from filenames.
  * Outputs the gallery array to paste into frontmatter.
@@ -13,15 +15,15 @@ import sharp from 'sharp';
 import { readdir, mkdir, rename, writeFile } from 'fs/promises';
 import { join, basename, extname } from 'path';
 
-const [rawFolder, slug] = process.argv.slice(2);
+const [rawFolder, slug, baseDir = 'adventures'] = process.argv.slice(2);
 if (!rawFolder || !slug) {
-	console.error('Usage: node scripts/convert-images.mjs <raw-folder> <adventure-slug>');
+	console.error('Usage: node scripts/convert-images.mjs <raw-folder> <slug> [base-dir]');
 	process.exit(1);
 }
 
 const inputDir = join('raw_photos', rawFolder);
-const thumbDir = join('public', 'adventures', slug, 'thumb');
-const fullDir  = join('public', 'adventures', slug, 'full');
+const thumbDir = join('public', baseDir, slug, 'thumb');
+const fullDir  = join('public', baseDir, slug, 'full');
 
 await mkdir(thumbDir, { recursive: true });
 await mkdir(fullDir,  { recursive: true });
@@ -63,7 +65,7 @@ for (const file of files) {
 }
 
 await writeFile(
-	join('public', 'adventures', slug, 'manifest.json'),
+	join('public', baseDir, slug, 'manifest.json'),
 	JSON.stringify(manifest, null, 2)
 );
 
